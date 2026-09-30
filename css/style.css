@@ -1,0 +1,2013 @@
+@charset "utf-8";
+
+/* webfont */
+/* 웹폰트없으면 지우세요!!! */
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+}
+
+body {
+    font-family: 'Pretendard';
+    font-family: 'SUITE', sans-serif;
+    /* font-size: ; */
+    line-height: 1.5;
+    color: #333;
+    background-color: #fffff4;
+}
+
+#wrap {
+    min-width: 1360px;
+}
+
+
+
+
+/* ❤️❤️❤️ header */
+#header {
+    background-color: #F5F7FA;
+
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.inner_header {
+    width: 1300px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.gnb {
+    display: flex;
+    gap: 20px;
+}
+
+.gnb>li {
+    position: relative;
+}
+
+/* 버튼과 서브메뉴 사이 연결 / 테두리가 있으니 가상선택자로 */
+.gnb>li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 30px;
+    /* 빈 공간만큼 */
+    cursor: pointer;
+}
+
+.gnb>li>a {
+    display: block;
+    padding: 10px 28px;
+    border: 2px solid #AFCFDD;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.gnb>li>a:hover {
+    background-color: #4A9BB8;
+    border: 2px solid #4A9BB8;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(74, 155, 184, 0.3)
+}
+
+.submenu {
+    /* display: flex;
+    flex-direction: column;
+ */
+
+    position: absolute;
+    top: 81px;
+    left: 0;
+    margin-top: 0;
+
+    background-color: #F5F7FA;
+    padding: 10px 22px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px rgba(74, 155, 184, 0.3);
+    z-index: 100;
+
+    display: none;
+
+    /* 숨김 처리 */
+    /* opacity: 0;
+    visibility: hidden;
+
+    transition: opactiy 0.3s ease-in-out, visibility 0.3s ease-in-out; */
+    /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
+}
+
+.gnb>li:hover .submenu {
+    /* display: flex;
+    flex-direction: column; */
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.inner_submenu li a {
+    font-weight: 700;
+    display: block;
+    padding: 8px 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.inner_submenu li a:hover {
+    color: #4a9bb8;
+
+}
+
+/* 기존 :hover 코드에 .active 클래스를 추가합니다. */
+.gnb>li>a:hover,
+.gnb>li>a.active {
+    background-color: #4A9BB8;
+    border: 2px solid #4A9BB8;
+    color: #fff;
+    /* box-shadow: 0 4px 10px rgba(74, 155, 184, 0.3); */
+}
+
+
+
+/* --------------------------------------------------------------- */
+/* 😁😁😁😁 main banner */
+
+.main-banner {
+
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+}
+
+.banner-slider {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* cursor: pointer; */
+}
+
+.banner-slide::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* background: linear-gradient(
+        90deg,
+        rgba(15, 39, 60, 0.48) 0%,
+        rgba(15, 39, 60, 0.25) 28%,
+        rgba(15, 39, 60, 0.05) 55%,
+        rgba(15, 39, 60, 0) 100%
+    ); */
+
+    /* ????????????????????? */
+    /* cursor: pointer; */
+    /* pointer-events: none; */
+}
+
+.banner-caption {
+    /* cursor: default; */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 1300px;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 3;
+}
+
+.caption-title,
+.caption-desc {
+    /* cursor: default; */
+
+    -webkit-user-select: none;
+    /* Safari, Chrome, older Opera */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+}
+
+.caption-title {
+    /* 자간 */
+    letter-spacing: 0.02em;
+    /* 행간 */
+    line-height: normal;
+    margin-bottom: 60px;
+    font-size: 40px;
+    font-weight: 700;
+
+    width: fit-content;
+
+}
+
+.caption-desc {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 400;
+    width: fit-content;
+}
+
+.swiper-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    z-index: 10;
+}
+
+.swiper-pagination span {
+    width: 8px;
+    height: 8px;
+    background: #F5F7FA;
+    border-radius: 10px;
+    display: block;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.swiper-pagination span.active {
+    width: 40px;
+    background: #4A9BB8;
+}
+
+
+
+
+
+/* ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ */
+/* =====================================================
+   아이오션 진료과목
+===================================================== */
+
+.medical-section {
+    width: 100%;
+    height: 800px;
+
+    background: #FFFFF4;
+
+    overflow: hidden;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =====================================================
+   섹션 제목
+===================================================== */
+
+.medical-title {
+    text-align: center;
+
+    padding-top: 50px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.medical-title h2 {
+    margin: 0;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    color: #333;
+}
+
+
+/* =====================================================
+   탭 전체 영역
+===================================================== */
+
+.medical-tab-wrap {
+    position: relative;
+}
+
+.medical-tab-wrap::before {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: #f6c945;
+
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+}
+
+
+/* =====================================================
+   탭 메뉴
+===================================================== */
+
+.medical-tabs {
+    position: absolute;
+
+    top: 100px;
+    left: 50%;
+
+    transform: translate(-50%);
+
+    width: 1300px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+}
+
+
+.medical-tab {
+    position: relative;
+    width: 150px;
+    height: 25px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* 노란 점 */
+.medical-tab::before {
+    content: "";
+    position: absolute;
+
+    top: -58px;
+    left: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: translateX(-50%);
+
+    background: #f6ca46;
+    border-radius: 50%;
+
+    transition: opacity 0.2s ease,
+        transform 0.25s ease;
+}
+
+/* hover 이미지 */
+.medical-tab::after {
+    content: "";
+    position: absolute;
+
+    top: -82px;
+    left: 50%;
+
+    width: 65px;
+    height: 49px;
+
+    transform: translateX(-50%) scale(0.85);
+
+    background: url(../images/main/sec_hover.svg) no-repeat center;
+    background-size: contain;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.medical-tab:hover::before,
+.medical-tab.active::before {
+    opacity: 0;
+}
+
+.medical-tab:hover::after,
+.medical-tab.active::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+
+
+
+
+.medical-tab span {
+
+    display: block;
+
+    margin-top: -15px;
+
+    font-family: 'Pretendard';
+
+    font-size: 20px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: #333;
+}
+
+
+.medical-tab:hover span {
+    color: #4a9bb8;
+}
+
+
+.medical-tab.active span {
+
+    color: #4a9bb8;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   콘텐츠 영역
+===================================================== */
+
+.medical-contents {
+
+    position: absolute;
+
+    top: 200px;
+    left: 50%;
+
+    transform: translate(-50%);
+
+    width: 1300px;
+    height: 300px;
+}
+
+
+/* =====================================================
+   각각의 탭 콘텐츠
+===================================================== */
+
+.medical-content {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 1300px;
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.medical-content.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   진료 제목
+===================================================== */
+
+.medical-text h3 {
+
+    position: absolute;
+
+    left: 25px;
+    top: -20px;
+
+    z-index: 4;
+
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #333;
+}
+
+
+/* =====================================================
+   캐릭터 영역
+   ★ 네가 작성한 top / left 그대로
+===================================================== */
+
+.medical-character {
+
+    position: absolute;
+
+    top: 40px;
+    left: 27px;
+
+    width: 675px;
+    height: 440px;
+
+    border-radius: 50px;
+
+    background: rgba(74, 155, 184, 0.1);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.medical-character img {
+
+    width: 550px;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: transform 0.5s ease;
+}
+
+
+.medical-content.active .medical-character img {
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   카드 영역
+===================================================== */
+
+.medical-cards {
+
+    position: absolute;
+
+    right: 0;
+    top: 24px;
+
+    width: 435px;
+    height: 483px;
+
+    margin-right: 80px;
+}
+
+
+/* =====================================================
+   카드 공통
+===================================================== */
+
+.medical-card {
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(145deg,
+            #4A9BB8,
+            rgba(74, 155, 184, 0.5),
+            rgba(74, 155, 184, 0));
+
+    box-shadow:
+        0 2px 10px rgba(74, 155, 184, 0.2);
+
+    /* padding: 30px 0 0 30px; */
+
+    padding-top: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+
+/* =====================================================
+   카드 제목
+===================================================== */
+
+.medical-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-family: 'Pretendard';
+
+    font-size: 22px;
+    font-weight: 600;
+
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   카드 이미지
+===================================================== */
+
+.medical-card img {
+
+    position: absolute;
+
+    left: 10px;
+    bottom: 2px;
+    /* right: 10px;
+    bottom: 8px; */
+
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.medical-card img
+/* =====================================================
+   카드 hover
+===================================================== */
+
+.medical-card:hover {
+
+    box-shadow:
+        0 12px 25px rgba(60, 120, 140, 0.25);
+}
+
+
+.medical-card:hover img {
+
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   ★ 4개 카드
+===================================================== */
+
+/* 1번 - 왼쪽 위 */
+.medical-cards.cards-4 .medical-card:nth-child(1) {
+
+    left: 40px;
+    top: 20px;
+}
+
+
+/* 2번 - 오른쪽 위 */
+.medical-cards.cards-4 .medical-card:nth-child(2) {
+
+    left: 275px;
+    top: -18px;
+}
+
+
+/* 3번 - 왼쪽 아래 */
+.medical-cards.cards-4 .medical-card:nth-child(3) {
+
+    left: 40px;
+    top: 255px;
+}
+
+
+/* 4번 - 오른쪽 아래 */
+.medical-cards.cards-4 .medical-card:nth-child(4) {
+
+    left: 275px;
+    top: 217px;
+}
+
+
+/* =====================================================
+   ★ 3개 카드
+   왼쪽 큰 카드 + 오른쪽 위/아래
+===================================================== */
+
+/* 1번 - 왼쪽 큰 카드 */
+
+.medical-cards.cards-3 .medical-card:nth-child(1) {
+
+    left: 40px;
+    top: 85px;
+
+    width: 200px;
+    height: 250px;
+}
+
+/* 2번 - 오른쪽 위 */
+
+.medical-cards.cards-3 .medical-card:nth-child(2) {
+
+    left: 275px;
+    top: 20px;
+}
+
+
+/* 3번 - 오른쪽 아래 */
+
+.medical-cards.cards-3 .medical-card:nth-child(3) {
+
+    left: 275px;
+    top: 255px;
+}
+
+
+/* =====================================================
+   ★ 2개 카드
+===================================================== */
+
+.medical-cards.cards-2 .medical-card:nth-child(1) {
+
+    padding-left: 25px;
+    left: 40px;
+    top: 85px;
+
+    width: 200px;
+    height: 250px;
+
+}
+
+
+.medical-cards.cards-2 .medical-card:nth-child(2) {
+
+    left: 275px;
+    top: 20px;
+    /* left: 235px;
+    top: 65px; */
+
+    width: 200px;
+    height: 250px;
+}
+
+/* 개별 이미지 위치 변경 */
+.medical-cards.cards-3 .medical-card:nth-child(1) img {
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+    height: 230px;
+}
+
+.medical-cards.cards-2 img {
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    height: 230px;
+}
+
+/* .medicla-card img.sec5-left {
+    position: absolute;
+    left: -10px;
+} */
+
+.medical-cards.cards-3 .medical-card img.sec5-left {
+    position: absolute;
+    left: -45px;
+    bottom: -23px;
+    width: 250px;
+    height: 250px;
+}
+
+.medical-cards.cards-3 .medical-card img.sec6-right {
+    position: absolute;
+    left: 0;
+    bottom: -23px;
+    width: 250px;
+    height: 250px;
+}
+
+
+
+/* 👌👌👌👌 의료진 소개!!!! */
+/* =========================
+   의료진 안내
+========================= */
+
+.doctor-section {
+    width: 1300px;
+    margin: 0 auto;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+
+/* 제목 */
+
+.doctor-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.doctor-title h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 800;
+    color: #333;
+}
+
+.doctor-title p {
+    margin: 0;
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 400;
+    color: #999;
+}
+
+
+/* 의료진 목록 */
+
+.doctor-list {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 70px;
+}
+
+
+/* 의료진 카드 */
+.doctor-card {
+    width: 280px;
+    overflow: hidden;
+
+    border-radius: 0 0 20px 20px;
+}
+
+
+/* 의사 이미지 */
+
+.doctor-image {
+    width: 280px;
+    height: 300px;
+
+    border-radius: 50% 50% 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    background-color: rgba(245, 247, 250, 0.5);
+}
+
+.doctor-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.doctor-image.cloy {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 정보 영역 */
+
+.doctor-info {
+    min-height: 250px;
+    padding: 18px 26px 13px 22px;
+
+    box-sizing: border-box;
+}
+
+
+/* 색상 */
+
+.doctor-card.blue .doctor-info {
+    background: #4b9db7;
+}
+
+.doctor-card.yellow .doctor-info {
+    background: #f6c945;
+}
+
+/* 진료과 */
+.doctor-department {
+    margin-bottom: 15px;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+/* 이름 */
+.doctor-info h3 {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.doctor-info h3 small {
+    /* margin-left: 4px; */
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/* 진료 태그 */
+
+.doctor-tags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    min-height: 50px;
+}
+
+.doctor-tags span {
+    height: 35px;
+    padding: 8px 15px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    background: #fff;
+
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #4A9BB8;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+}
+
+.doctor-tags.cloy span {
+    color: #C49F31;
+}
+
+/* 더보기 */
+
+.doctor-more {
+    display: block;
+
+    width: 80px;
+    height: 35px;
+
+    margin: 15px auto 0;
+
+    border: 1px solid #fff;
+    border-radius: 20px;
+
+    background: transparent;
+
+    font-family: 'Pretendard';
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.doctor-more:hover {
+    background: #fff;
+    color: #4A9BB8;
+}
+
+.doctor-more.cloy:hover {
+    background: #fff;
+    color: #C49F31;
+}
+
+
+
+
+
+/* 🤣🤣🤣🤣🤣 캐릭터 영상 */
+.character-section {
+    width: 1300px;
+    margin: 0 auto;
+
+}
+
+/* 제목 */
+.character-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.character-title h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 800;
+    color: #333;
+}
+
+.character-title p {
+    margin: 0;
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 18px;
+    color: #999;
+}
+
+/* 영상 */
+.character-video {
+    width: 1000px;
+    aspect-ratio: 16 / 9;
+    margin: 50px auto 0;
+    overflow: hidden;
+    border-radius: 30px;
+    /* background: #eee; */
+}
+
+.character-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 아이오션 소식 */
+.bg_wrap {
+    margin-top: 70px;
+    background: url(../images/main/bg.svg) no-repeat top 454px left;
+}
+
+
+
+/* 제목 */
+
+.news-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.news-title h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.news-title p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #999;
+}
+
+
+/* 콘텐츠 */
+
+.news-content {
+    width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -------------------------
+   아이오션 TV
+------------------------- */
+.tv-screen img {
+    display: block;
+
+    object-fit: contain;
+}
+
+.tv-screen {
+    position: relative;
+
+}
+
+.tv-screen>img:first-child {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    margin-top: 70px;
+    width: 711px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.tv-scree.tv-character {
+    width: 100px;
+    height: 100px;
+}
+
+/* 모니터 위 캐릭터 */
+.tv-character {
+    position: absolute;
+    top: -85px;
+    left: 150px;
+    bottom: 20px;
+    z-index: 2;
+}
+
+/* 재생 버튼 */
+.tv-play {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 70px;
+    height: 70px;
+
+    transform: translate(-50%, -50%);
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.tv-play span {
+    position: absolute;
+
+    left: 29px;
+    top: 22px;
+
+    width: 0;
+    height: 0;
+
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 19px solid #58aabd;
+}
+
+/*
+ -------------------------
+   칭찬카드
+------------------------- */
+
+/* 카드 전체를 감싸는 래퍼 (캐릭터 배치의 기준점이 됨) */
+.card-wrap {
+    position: relative;
+    /* 필요하다면 width나 margin을 여기에 설정할 수 있습니다 */
+}
+
+.news-card {
+    width: 460px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-card .swiper {
+    width: 340px;
+    height: 500px;
+}
+
+.news-card .swiper-slide {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
+
+.card-character {
+    position: absolute;
+    right: -110px;
+    /* 카드 우측 밖으로 살짝 튀어나오게 조절 (원하는 만큼 값 변경) */
+    bottom: -80px;
+    /* 카드 아래쪽으로 살짝 내려오게 조절 (원하는 만큼 값 변경) */
+    z-index: 10;
+    /* 카드의 위쪽 레이어에 올라오도록 설정 */
+    width: 180px;
+    /* 캐릭터 크기 (적절한 사이즈로 조절하세요) */
+    height: auto;
+}
+
+/* ===============
+둘러보기
+==================== */
+.tour-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 100px 0;
+    min-height: 103vh;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.cloud {
+    position: absolute;
+    z-index: 1;
+}
+
+.cloud-1 {
+    width: 160px;
+    height: 50px;
+    top: 70px;
+    left: 100px;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.cloud-2 {
+    width: 200px;
+    height: 60px;
+    top: 130px;
+    right: 5%;
+    animation: floatUpDown 5s ease-in-out infinite reverse;
+}
+
+.tour-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.tour-title {
+    margin-bottom: 90px;
+}
+
+.tour-title h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.tour-title p {
+    font-family: 'Pretendard';
+    color: #999;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tour-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.tour-window {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    perspective: 1200px;
+}
+
+.tour-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 💡 핵심 수정 1: overflow: hidden 삭제 */
+.tour-item {
+    position: absolute;
+    top: 50%;
+    border-radius: 30px;
+    /* overflow: hidden; <--- 삭제됨 */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform-origin: center center;
+}
+
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* ==================================================
+   더보기 버튼 (파란색 도형 충돌 해결 & 비율 최적화)
+================================================== */
+.tour-item .btn-more {
+    position: absolute;
+    top: -40px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 안의 요소들을 정중앙으로 모아줌 */
+    text-decoration: none;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+    z-index: 20;
+}
+
+/* '더보기' 글자 */
+.tour-item .btn-more .txt {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A9BB8;
+    margin-bottom: -32px;
+    /* 글자와 밑의 캐릭터 사이 간격을 좁힘 */
+    z-index: 2;
+}
+
+/* 캐릭터 이미지 */
+.tour-item .btn-more img {
+    border-radius: 50%;
+    border: 5px solid #F6CA46;
+    background-color: rgba(255, 251, 233, 0.5);
+    backdrop-filter: blur(10px);
+
+    height: 100px;
+    width: 100px;
+    /* width: 70%; */
+    /* 캐릭터 이미지가 글씨 밑에 쏙 들어가도록 크기 조절 */
+    /* height: auto; */
+    object-fit: contain;
+    z-index: 1;
+}
+
+.tour-item .btn-more:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+.pos-0 .btn-more {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.bg-1 {
+    background: url(../images/main/inside1.png) no-repeat center center /cover;
+}
+
+.bg-2 {
+    background: url(../images/main/inside2.png) no-repeat center center /cover;
+}
+
+.bg-3 {
+    background: url(../images/main/inside3.png) no-repeat center center /cover;
+}
+
+.bg-4 {
+    background: url(../images/main/inside4.png) no-repeat center center /cover;
+}
+
+.bg-5 {
+    background: url(../images/main/inside5.png) no-repeat center center /cover;
+}
+
+.bg-6 {
+    background: url(../images/main/inside6.png) no-repeat center center /cover;
+}
+
+.bg-7 {
+    background: url(../images/main/inside7.png) no-repeat center center /cover;
+}
+
+.bg-8 {
+    background: url(../images/main/inside8.png) no-repeat center center /cover;
+}
+
+.tour-item span {
+    position: absolute;
+    bottom: 25px;
+    right: 0px;
+    background-color: rgba(74, 155, 184, 0.8);
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 30px 0 0 30px;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 6px 15px rgba(74, 155, 184, 0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.tour-item.pos-0 span {
+    opacity: 1;
+}
+
+.pos-0 {
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 556px;
+    transform: translate(-58%, -53%);
+    z-index: 5;
+    filter: brightness(1);
+    cursor: default;
+}
+
+.pos-m1 {
+    left: 70px;
+    top: 57%;
+    width: 200px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    filter: brightness(0.7);
+}
+
+.pos-m2 {
+    left: -170px;
+    top: 65%;
+    width: 200px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    filter: brightness(0.5);
+}
+
+.pos-p1 {
+    right: -3px;
+    top: 57%;
+    width: 200px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    filter: brightness(0.7);
+}
+
+.pos-p2 {
+    right: -243px;
+    top: 65%;
+    width: 200px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    filter: brightness(0.5);
+}
+
+.pos-hidden {
+    left: 50%;
+    top: 50%;
+    width: 11%;
+    height: 85%;
+    transform: translate(-50%, -50%) scale(0.5);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tour-arrow {
+    position: absolute;
+    z-index: 10;
+    font-size: 20px;
+    background-color: #f6c945;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.tour-arrow:hover {
+    transform: scale(1.1);
+    background-color: #eab729;
+}
+
+.tour-arrow.prev {
+    background: url(../images/main/mark_left.svg) no-repeat center center;
+    left: 228px;
+}
+
+.tour-arrow.next {
+    background: url(../images/main/mark_right.svg) no-repeat center center;
+    right: 355px;
+}
+
+
+
+
+
+
+
+/* ========================================
+ 💻💻💻💻  FOOTER TEXT
+======================================== */
+
+.footer {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 0.5);
+    width: 100%;
+    background: url(../images/layout/m_footer_bg.svg) no-repeat center top / cover;
+    z-index: 99;
+}
+
+.footer-inner {
+    width: 1300px;
+    margin: -130px auto;
+    /* 기존 여백 설정 유지 */
+    padding: 130px 0 50px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* 로고 영역과 텍스트 영역을 위아래로 분리 */
+}
+
+/* ========================================
+   상단: 로고 영역
+======================================== */
+.footer-top {
+    margin-bottom: 25px;
+    /* 로고와 아래 텍스트 사이의 간격 */
+}
+
+.footer-logo {
+    margin: 0;
+}
+
+/* ========================================
+   하단: 텍스트 영역 공통
+======================================== */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* 핵심포인트: 모든 블록의 윗선을 똑같이 맞춤 */
+    width: 100%;
+}
+
+.footer-block {
+    display: flex;
+    align-items: flex-start;
+}
+
+.label {
+    width: 70px;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.5);
+    flex-shrink: 0;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 텍스트 줄 간격 */
+}
+
+/* ========================================
+   병원 정보 (주소, 이용약관)
+======================================== */
+.footer-info {
+    flex-direction: column;
+    width: 400px;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-item .value {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* font-weight: 500; */
+}
+
+.info-item b {
+    margin: 0 4px;
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.copyright {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+/* ========================================
+   진료시간
+======================================== */
+.footer-time {
+    width: 300px;
+}
+
+.time-row {
+    display: flex;
+    gap: 20px;
+}
+
+.time-row span,
+.footer-lunch .lunch-row .label,
+.footer-lunch .lunch-row .value,
+.notice {
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.8);
+}
+
+.time-row span:first-child {
+    width: 100px;
+    /* '주말 및 공휴일' 텍스트가 안 깨지게 너비 확보 */
+}
+
+/* ========================================
+   점심시간
+======================================== */
+.footer-lunch {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* 위 점심시간과 아래 안내문구 사이의 간격 */
+}
+
+.lunch-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-lunch p {
+    margin: 0;
+}
+
+
+/* ========================================
+   대표번호
+======================================== */
+.footer-contact {
+    flex-direction: column;
+    /* '대표 번호' 라벨 밑으로 전화번호 배치 */
+}
+
+.footer-contact .label {
+    margin-bottom: 10px;
+}
+
+.tel-link {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    line-height: 1;
+}
+
+
+
+
+
+
+
+
+/* ========================================
+   플로팅 메뉴 (Quick Menu)
+======================================== */
+.floating-menu {
+    position: fixed;
+    right: 40px;
+    /* 화면 오른쪽에서 띄울 간격 */
+    bottom: 50px;
+    /* 화면 아래쪽에서 띄울 간격 */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* 캐릭터 박스와 탑 버튼 사이의 간격 */
+}
+
+/* 호버 시 나타나는 둥근 캡슐 모양 메뉴 */
+.quick-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80px;
+    height: 270px;
+    border: 3px solid #AFCFDD;
+    border-radius: 50px;
+    background-color: rgba(249, 250, 252, 0.3);
+    backdrop-filter: blur(10px);
+
+    /* 기본 숨김 상태 설정 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    margin-bottom: 5px;
+}
+.quick-icons a {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+.quick-icons img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.quick-icons a:hover img {
+    transform: scale(1.15);
+    /* 마우스 올리면 아이콘 살짝 커짐 */
+}
+
+/* 캐릭터 네모 박스 */
+.quick-char {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: rgba(245, 247, 250, 0.6);
+    /* 기본 파란색 그림자 */
+    box-shadow: 0 0 25px rgba(175, 207, 221, 0.8);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.quick-char img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* 호버 전용 캐릭터 이미지는 처음에 숨겨둠 */
+.quick-char .char-hover {
+    opacity: 0;
+}
+
+/* ========================================
+   마우스 호버(오버) 시 작동하는 애니메이션
+======================================== */
+.floating-menu:hover .quick-icons {
+    opacity: 1;
+    /* 숨겨진 캡슐 메뉴 나타남 */
+    visibility: visible;
+    transform: translateY(0);
+    /* 아래에서 위로 슥 올라옴 */
+}
+
+.floating-menu:hover .quick-char {
+    /* 호버 시 노란색 그림자로 변경 */
+    box-shadow: 0 0 25px rgba(246, 201, 69, 0.9);
+}
+
+/* 캐릭터 교체 애니메이션 */
+.floating-menu:hover .char-default {
+    opacity: 0;
+    /* 기본 캐릭터 숨김 */
+}
+
+.floating-menu:hover .char-hover {
+    opacity: 1;
+    /* 웃는 캐릭터 등장 */
+}
+
+/* ========================================
+   맨 위로 가기 (탑 버튼)
+======================================== */
+.btn-top {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #AFCFDD;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-top:hover {
+    background-color: #F5F7FA;
+    transform: translateY(-2px);
+    /* 누르기 좋게 위로 살짝 들림 */
+}
+
+/* CSS로 화살표 그리기 (이미지 불필요) */
+.btn-top .arrow {
+    display: inline-block;
+    background: url(../images/button/arrow.svg) no-repeat center center;
+    
+    width: 80px;
+    height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+/* @media (max-width: 1280px) {
+
+    .banner-caption {
+        width: calc(100% - 120px);
+    }
+
+    .caption-title {
+        font-size: 44px;
+    }
+} */
+
+
+/* =========================
+   MOBILE
+========================= */
+
+/* @media (max-width: 768px) {
+
+    .main-banner {
+        height: 700px;
+    }
+
+    .banner-caption {
+        width: calc(100% - 48px);
+        top: 52%;
+    }
+
+    .caption-title {
+        margin-bottom: 35px;
+
+        font-size: 34px;
+        line-height: 1.4;
+    }
+
+    .caption-desc {
+        font-size: 16px;
+    }
+} */
