@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이오션 이야기</title>
+
+
+    <!-- webfont 연결-->
+    <!-- font-family: 'Pretendard'; -->
+    <!-- font-family: 'SUITE', sans-serif; -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/static/woff2/SUITE.css" rel="stylesheet">
+
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <!-- css 연결-->
+    <link rel="stylesheet" href="css/style3.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- header st-->
+        <div id="header">
+            <div class="inner_header">
+
+
+                <h1 class="logo">
+                    <a href="./index.html"><img src="./images/layout/header_logo.svg" alt="logo"></a>
+                </h1>
+
+                <ul class="gnb">
+                    <li> <!-- 1 -->
+                        <a href="./sub1.html">아이오션 소개</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub1.html#hospintro">병원 소개</a></li>
+                                <li><a href="./sub1.html#doctor-section">의료진 소개</a></li>
+                                <li><a href="./sub1.html#character-section">캐릭터 소개</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li> <!-- 2 -->
+                        <a href="./index.html#medical-section">진료 과목</a>
+                    </li>
+
+                    <li> <!-- 3 -->
+                        <a href="./sub2.html">입·퇴원 안내</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub2.html#admission-procedure">입원 안내</a></li>
+                                <li><a href="./sub2.html#discharge-procedure">퇴원 안내</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li> <!-- 4 -->
+                        <a href="./sub3.html">아이오션 이야기</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub3.html#tv-section">아이오션 소개</a></li>
+                                <li><a href="./sub3.html#notice-section">공지사항</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- header fi-->
+
+        <!-- 배너 -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">아이오션 이야기</h2>
+
+                <ul class="hero-menu">
+                    <li><a href="#tv-section" class="active">아이오션 소식</a></li>
+                    <li><a href="#notice-section">공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- 아이오션 TV -->
+        <section class="tv-section" id="tv-section">
+
+            <!-- ⭐️ 배경 장식 (달, 별, 캐릭터) -->
+            <!-- 위치(top, left 등)와 크기는 넣으실 이미지에 맞춰 CSS에서 미세조정하시면 됩니다 -->
+            <img src="./images/sub/3/moon.svg" alt="달" class="tv-deco deco-moon">
+            <img src="./images/sub/3/star_yell.svg" alt="노란별" class="tv-deco deco-star-left">
+            <img src="./images/sub/3/star_blue.svg" alt="파란별" class="tv-deco deco-star-right">
+            <img src="./images/sub/3/char_G.svg" alt="아이오션 캐릭터" class="tv-deco deco-char">
+
+            <div class="tv-inner-wrap">
+
+                <!-- 타이틀 영역 -->
+                <h2 class="tv-main-title">아이오션 TV</h2>
+                <h3 class="tv-sub-title">의료진이 전하는 아이 건강 이야기</h3>
+                <p class="tv-desc">아이의 건강과 성장에 대해 궁금했던 이야기를 의료진의 목소리로 전합니다.</p>
+
+                <!-- TV 카드 리스트 (3개) -->
+                <div class="tv-card-container">
+
+                    <!-- 카드 1 -->
+                    <div class="tv-card tv-fade-up delay-1">
+                        <div class="tv-thumb">
+                            <!-- 썸네일 이미지 -->
+                            <img src="./images/sub/3/tv1.png" alt="치카를 1초 만에 끝낸다고?">
+                        </div>
+                        <div class="tv-info">
+                            <h4 class="tv-card-title">치카를 1초 만에 끝낸다고?</h4>
+                            <p class="tv-card-desc">아이와 함께 올바른 양치 방법을 쉽고 재미있게 알아봐요.</p>
+                            <div class="tv-tags">
+                                <span class="tv-tag tag-blue">#소아치과</span>
+                                <span class="tv-tag tag-blue">#충치예방</span>
+                                <span class="tv-tag tag-blue">#올바른양치법</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 카드 2 -->
+                    <div class="tv-card tv-fade-up delay-2">
+                        <div class="tv-thumb">
+                            <!-- 썸네일 이미지 -->
+                            <img src="./images/sub/3/tv2.png" alt="요즘 나, 왜 이렇게 예민할까?">
+                        </div>
+                        <div class="tv-info">
+                            <h4 class="tv-card-title">요즘 나, 왜 이렇게 예민할까?</h4>
+                            <p class="tv-card-desc">사춘기 시기의 정서 변화와 마음에 관한 이야기를 함께 알아봐요.</p>
+                            <div class="tv-tags">
+                                <span class="tv-tag tag-yellow">#정서변화</span>
+                                <span class="tv-tag tag-yellow">#소아정신과</span>
+                                <span class="tv-tag tag-yellow">#청소년심리</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 카드 3 -->
+                    <div class="tv-card tv-fade-up delay-3">
+                        <div class="tv-thumb">
+                            <!-- 썸네일 이미지 -->
+                            <img src="./images/sub/3/tv3.png" alt="예방접종 전, 꼭 알아두세요!">
+                        </div>
+                        <div class="tv-info">
+                            <h4 class="tv-card-title">예방접종 전, 꼭 알아두세요!</h4>
+                            <p class="tv-card-desc">접종 전 알아두면 좋은 내용들을 쉽고 편하게 알아봐요.</p>
+                            <div class="tv-tags">
+                                <span class="tv-tag tag-blue">#예방접종</span>
+                                <span class="tv-tag tag-blue">#소아청소년과</span>
+                                <span class="tv-tag tag-blue">#예방접종준비</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- // tv-card-container -->
+            </div> <!-- // tv-inner-wrap -->
+        </section>
+
+
+        <!-- 아이오션 칭찬카드 섹션 -->
+        <section class="praise-section">
+            <div class="praise-inner">
+
+                <!-- 타이틀 & 설명 -->
+                <h2 class="praise-title">아이오션 칭찬카드</h2>
+                <p class="praise-desc">아이오션병원을 찾아주신 분들이 전해주신 따뜻한 마음과 소중한 이야기를 담았습니다.</p>
+
+                <!-- 슬라이더 영역 -->
+                <div class="praise-slider-wrap">
+
+                    <!-- 왼쪽 캐릭터 (위아래 둥둥) -->
+                    <img src="./images/sub/3/card_G.svg" alt="돌고래" class="praise-char char-left">
+
+                    <!-- 이전 버튼 -->
+                    <button class="praise-arrow prev-arrow">
+                        <img src="./images/sub/3/mark_left.svg" alt="이전">
+                    </button>
+
+                    <!-- 가운데 박스 + 텍스트 -->
+                    <div class="praise-slide-container">
+
+                        <!-- 1 -->
+                        <div class="praise-slide active">
+                            <div class="combined-img-wrap">
+                                <img src="./images/sub/3/card1.png" alt="칭찬카드" class="combined-img">
+                                <div class="photo-name">방사선사 <span class="divider">|</span> <strong>김도윤</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- 2 -->
+                        <div class="praise-slide">
+                            <div class="combined-img-wrap">
+                                <img src="./images/sub/3/card2.png" alt="칭찬카드" class="combined-img">
+                                <div class="photo-name">원장 <span class="divider">|</span> <strong>김하린</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="praise-slide">
+                            <div class="combined-img-wrap">
+                                <img src="./images/sub/3/card3.png" alt="칭찬카드" class="combined-img">
+                                <div class="photo-name">원장 <span class="divider">|</span> <strong>박서준</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- 4 -->
+                        <div class="praise-slide">
+                            <div class="combined-img-wrap">
+                                <img src="./images/sub/3/card4.png" alt="칭찬카드" class="combined-img">
+                                <div class="photo-name">원장 <span class="divider">|</span> <strong>이준호</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- 5 -->
+                        <div class="praise-slide">
+                            <div class="combined-img-wrap">
+                                <img src="./images/sub/3/card5.png" alt="칭찬카드" class="combined-img">
+                                <div class="photo-name">원장 <span class="divider">|</span> <strong>정유진</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- 6 -->
+                        <div class="praise-slide">
+                            <div class="combined-img-wrap">
+                                <img src="./images/sub/3/card6.png" alt="칭찬카드" class="combined-img">
+                                <div class="photo-name">간호사 <span class="divider">|</span> <strong>한다은</strong></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- 다음 버튼 -->
+                    <button class="praise-arrow next-arrow">
+                        <img src="./images/sub/3/mark_right.svg" alt="다음">
+                    </button>
+
+                    <!-- 오른쪽 캐릭터 (위아래 둥둥) -->
+                    <img src="./images/sub/3/card_Y.svg" alt="CHAR" class="praise-char char-right">
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 공지사항 섹션 -->
+        <section class="notice-section" id="notice-section">
+            <div class="notice-inner">
+
+                <!-- 타이틀 -->
+                <h2 class="notice-title">공지사항</h2>
+
+                <!-- 총 게시물 수 -->
+                <div class="notice-count">
+                    <span class="txt-normal">총</span>
+                    <span class="txt-bold">349</span><span class="txt-normal">건</span>
+                </div>
+
+                <!-- 공지사항 리스트 테이블 -->
+                <ul class="notice-list">
+
+                    <!-- ⭐️ 고정 공지 (배경색 #FFFFFA) -->
+                    <li class="notice-item pinned">
+                        <div class="nt-num">공지</div>
+                        <!-- 뱃지 색상은 클래스로 조절 (bg-yellow, bg-purple, bg-gray, bg-blue) -->
+                        <div class="nt-badge"><span class="badge bg-yellow">진료</span></div>
+                        <div class="nt-title">수능일 진료시간 안내</div>
+                        <div class="nt-date">2026.11.03</div>
+                    </li>
+
+                    <li class="notice-item pinned">
+                        <div class="nt-num">공지</div>
+                        <div class="nt-badge"><span class="badge bg-yellow">진료</span></div>
+                        <div class="nt-title">11월 진료 일정 및 휴진 안내</div>
+                        <div class="nt-date">2026.10.29</div>
+                    </li>
+
+                    <!-- 일반 공지 -->
+                    <li class="notice-item">
+                        <div class="nt-num">349</div>
+                        <div class="nt-badge"><span class="badge bg-purple">건강</span></div>
+                        <div class="nt-title">겨울철 호흡기 질환 예방수칙 안내</div>
+                        <div class="nt-date">2026.10.23</div>
+                    </li>
+
+                    <li class="notice-item">
+                        <div class="nt-num">348</div>
+                        <div class="nt-badge"><span class="badge bg-gray">접종</span></div>
+                        <div class="nt-title">독감 예방접종 일정 안내</div>
+                        <div class="nt-date">2026.10.12</div>
+                    </li>
+
+                    <li class="notice-item">
+                        <div class="nt-num">347</div>
+                        <div class="nt-badge"><span class="badge bg-yellow">진료</span></div>
+                        <div class="nt-title">개천절 · 한글날 대체공휴일 진료시간 안내</div>
+                        <div class="nt-date">2026.09.25</div>
+                    </li>
+
+                    <li class="notice-item">
+                        <div class="nt-num">346</div>
+                        <div class="nt-badge"><span class="badge bg-yellow">진료</span></div>
+                        <div class="nt-title">10월 진료 일정 및 휴진 안내</div>
+                        <div class="nt-date">2026.09.24</div>
+                    </li>
+
+                    <li class="notice-item">
+                        <div class="nt-num">345</div>
+                        <div class="nt-badge"><span class="badge bg-blue">검진</span></div>
+                        <div class="nt-title">영유아 건강검진 예약 및 이용 안내</div>
+                        <div class="nt-date">2026.09.18</div>
+                    </li>
+
+                </ul>
+
+                <!-- 페이지네이션 (숫자 및 화살표) -->
+                <div class="notice-pagination">
+                    <!-- 화살표 이미지 버튼 -->
+                    <button class="pg-btn prev-double"><img src="./images/sub/3/notice2_l.svg" alt="처음"></button>
+                    <button class="pg-btn prev-single"><img src="./images/sub/3/notice1_l.svg" alt="이전"></button>
+
+                    <!-- 페이지 숫자 -->
+                    <a href="#" class="pg-num active">1</a>
+                    <a href="#" class="pg-num">2</a>
+                    <a href="#" class="pg-num">3</a>
+                    <a href="#" class="pg-num">4</a>
+                    <a href="#" class="pg-num">5</a>
+
+                    <!-- 화살표 이미지 버튼 -->
+                    <button class="pg-btn next-single"><img src="./images/sub/3/notice1_r.svg" alt="다음"></button>
+                    <button class="pg-btn next-double"><img src="./images/sub/3/notice2_r.svg" alt="마지막"></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- footer st -->
+        <footer class="footer">
+            <div class="footer-inner">
+
+
+                <!-- 상단 로고 (단독 행) -->
+                <div class="footer-top">
+                    <h2 class="footer-logo">
+                        <img src="./images/layout/footer_logo.svg" alt="아이오션병원 로고">
+                    </h2>
+                </div>
+
+                <!-- 하단 텍스트 영역 (동일한 선상 정렬) -->
+                <div class="footer-bottom">
+
+                    <!-- 병원 정보 -->
+                    <div class="footer-info footer-block">
+                        <div class="infomation-item">
+                            <p class="label">주소</p>
+                            <p class="value">경남 거제시 거제중앙로 1938</p>
+                        </div>
+                        <div class="infomation-item">
+                            <!-- <p class="label"><a href="#">이용약관</a></p> -->
+                            <p class="value">
+                                <a href="#">이용약관</a> <b>·</b>
+                                <a href="#">개인정보처리방침</a> <b>·</b> <a href="#">환자권리장전</a> <b>·</b> <a href="#">오시는 길</a>
+                            </p>
+                        </div>
+                        <p class="copyright">
+                            copyright © IOCEAN HOSPITAL. All rights reserved.
+                        </p>
+                    </div>
+
+                    <!-- 진료시간 -->
+                    <div class="footer-time footer-block">
+                        <p class="label">진료 시간</p>
+                        <div class="value">
+                            <div class="time-row">
+                                <span>평일</span>
+                                <span>09:00 - 18:00</span>
+                            </div>
+                            <div class="time-row">
+                                <span>주말 및 공휴일</span>
+                                <span>09:00 - 13:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 점심시간 및 야간진료 -->
+                    <div class="footer-lunch">
+                        <div class="lunch-row">
+                            <p class="label">점심시간</p>
+                            <p class="value">13:00 - 14:00</p>
+                        </div>
+                        <div class="lunch-row">
+                            <p class="label">평일 야간(수)</p>
+                            <p class="value">18:00 - 21:00</p>
+                        </div>
+                    </div>
+
+                    <!-- 대표번호 -->
+                    <div class="footer-contact footer-block">
+                        <p class="label">대표 번호</p>
+                        <div class="value">
+                            <a href="tel:055-123-4567" class="tel-link">055-123-4567</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- footer end-->
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="js/script3.js"></script>
+
+    <!-- AOS js 적용 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- ==========================================
+       플로팅 퀵 메뉴
+    ========================================== -->
+    <div class="floating-menu">
+
+        <!-- 숨겨진 퀵 아이콘 메뉴 (호버 시 등장) -->
+        <div class="quick-icons">
+            <a href="#none" title="캘린더"><img src="./images/button/calendar.svg" alt="캘린더"></a>
+            <a href="tel:055-123-4567" title="전화"><img src="./images/button/call.svg" alt="전화"></a>
+            <a href="#none" title="상담"><img src="./images/button/message.svg" alt="상담"></a>
+        </div>
+
+        <!-- 캐릭터 영역 (기본/호버 이미지 2장 겹쳐두기) -->
+        <div class="quick-char">
+            <img src="./images/button/basic.svg" alt="기존" class="char-default">
+            <img src="./images/button/hover.svg" alt="호버" class="char-hover">
+        </div>
+
+        <!-- 탑 버튼 -->
+        <button type="button" class="btn-top" aria-label="상단으로 이동">
+            <span class="arrow"></span>
+        </button>
+
+    </div>
+    <!-- 플로팅 퀵 메뉴 끝 -->
+
+
+
+
+</body>
+
+</html>

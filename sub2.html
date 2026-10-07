@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입·퇴원 안내</title>
+
+    <!-- webfont 연결-->
+    <!-- font-family: 'Pretendard'; -->
+    <!-- font-family: 'SUITE', sans-serif; -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/static/woff2/SUITE.css" rel="stylesheet">
+
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <!-- css 연결-->
+    <link rel="stylesheet" href="css/style2.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="wrap">
+
+
+        <!-- header st-->
+        <div id="header">
+            <div class="inner_header">
+
+
+                <h1 class="logo">
+                    <a href="./index.html"><img src="./images/layout/header_logo.svg" alt="logo"></a>
+                </h1>
+
+                <ul class="gnb">
+                    <li> <!-- 1 -->
+                        <a href="#">아이오션 소개</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="">병원 소개</a></li>
+                                <li><a href="">의료진 소개</a></li>
+                                <li><a href="">캐릭터 소개</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li> <!-- 2 -->
+                        <a href="./index.html#medical-section">진료 과목</a>
+                    </li>
+
+                    <li> <!-- 3 -->
+                        <a href="./sub2.html">입·퇴원 안내</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub2.html#admission-procedure">입원 안내</a></li>
+                                <li><a href="./sub2.html#discharge-procedure">퇴원 안내</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li> <!-- 4 -->
+                        <a href="./sub3.html">아이오션 이야기</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub3.html#tv-section">아이오션 소개</a></li>
+                                <li><a href="./sub3.html#notice-section">공지사항</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- 배너 -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">입·퇴원 안내</h2>
+
+                <ul class="hero-menu">
+                    <!-- 첫 번째 메뉴는 기본적으로 active 상태로 둡니다. -->
+                    <li><a href="#admission-procedure" class="active">입원 안내</a></li>
+                    <li><a href="#discharge-procedure">퇴원 안내</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- 입원 절차 -->
+        <section class="admission-procedure" id="admission-procedure">
+            <div class="inner-wrap">
+
+                <!-- 타이틀 -->
+                <h2 class="title">입원 절차</h2>
+
+                <!-- 안내 박스 -->
+                <div class="info-box">
+                    <strong class="info-title">
+                        <span class="exclamation"><img src="./images/sub/2/!.svg" alt=""></span> 입원 전 확인해 주세요.
+                    </strong>
+                    <ul class="info-list">
+                        <li>입원 당일에는 보호자 신분증을 준비해 주세요.</li>
+                        <li>병실 상황에 따라 희망 병실과 실제 배정 병실이 달라질 수 있습니다.</li>
+                    </ul>
+                </div>
+
+                <!-- 타임라인 라인 & 노드 영역 -->
+                <div class="timeline-wrapper">
+                    <!-- 간격이 넓어진 새로운 SVG -->
+                    <svg class="path-svg" preserveAspectRatio="none" viewBox="0 0 1200 800">
+                        <path d="M 0,120 
+                 L 1100,120 Q 1150,120 1150,170 
+                 L 1150,320 Q 1150,370 1100,370 
+                 L 100,370 Q 50,370 50,420 
+                 L 50,570 Q 50,620 100,620 
+                 L 1200,620" fill="none" stroke="#f6c945" stroke-width="4" vector-effect="non-scaling-stroke" />
+                    </svg>
+
+                    <!-- 시작 캐릭터 (높이 비율 맞춤) -->
+                    <div class="timeline-point char-point fade-target delay-0" style="left: 10%; top: 15%;">
+                        <div class="char-icon"><img src="./images/sub/2/char_G.svg" alt=""></div>
+                    </div>
+
+                    <!-- Step 1: 입원 결정 (top: 15% = 120px 높이) -->
+                    <div class="timeline-point fade-target delay-1" style="left: 15%; top: 15%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/adm_icon1.svg" alt="add_icon"></div>
+                        <div class="text-wrap">
+                            <h4>입원 결정</h4>
+                            <p>외래 진료 후 담당 의료진이<br>입원 필요 여부를 판단합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: 입원 수속 -->
+                    <div class="timeline-point fade-target delay-2" style="left: 70%; top: 15%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/adm_icon2.svg" alt="add_icon"></div>
+                        <div class="text-wrap">
+                            <h4>입원 수속</h4>
+                            <p>입원 수속 창구에서 입원에<br>필요한 절차를 진행합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: 병실 배정 (top: 46.25% = 370px 높이) -->
+                    <div class="timeline-point fade-target delay-3" style="left: 48%; top: 46.25%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/adm_icon3.svg" alt="add_icon"></div>
+                        <div class="text-wrap">
+                            <h4>병실 배정</h4>
+                            <p>병실 상황에 따라 병실이 배정되며,<br>병동으로 이동합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: 병동 안내 (top: 77.5% = 620px 높이) -->
+                    <div class="timeline-point fade-target delay-4" style="left: 25%; top: 77.5%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/adm_icon4.svg" alt="add_icon"></div>
+                        <div class="text-wrap">
+                            <h4>병동 안내</h4>
+                            <p>간호사의 병동 생활 및<br>주의사항 안내를 받습니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: 입원 -->
+                    <div class="timeline-point fade-target delay-5" style="left: 90%; top: 77.5%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/adm_icon5.svg" alt="add_icon"></div>
+                        <div class="text-wrap">
+                            <h4>입원</h4>
+                            <p>치료와 검사 일정에 따라<br>입원 생활을 시작합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 입원 시 준비물 섹션 -->
+        <section class="preparation-section">
+            <div class="inner-wrap">
+
+                <!-- 상단 타이틀 영역 -->
+                <div class="prep-header">
+                    <h2 class="title">입원 시 준비물</h2>
+                    <p>
+                        아이와 보호자가 편안한 입원 생활을 할 수 있도록 필요한 준비물을 미리 확인해 주세요.<br>
+                        빠진 물건이 없는지 하나씩 체크해 보세요!
+                    </p>
+                </div>
+
+                <!-- 두 개의 박스를 담는 컨테이너 -->
+                <div class="prep-container">
+
+                    <!-- 1. 체크리스트 박스 (노란색) -->
+                    <div class="prep-box box-yellow">
+
+                        <!-- 라벨 (선 위에 걸치는 부분) -->
+                        <div class="box-label label-yellow">
+                            <!-- 체크 이미지 (경로를 실제 이미지로 변경하세요) -->
+                            <img src="./images/sub/2/check_blue.svg" alt="체크" class="badge-img">
+                            <span>체크리스트</span>
+                        </div>
+
+                        <!-- 내부 체크리스트 (2단 그리드) -->
+                        <ul class="check-list">
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">세면도구</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">복용 중인 약</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">개인 위생용품</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">휴대폰 및 충전기</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">지퍼백·비닐봉지</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">미끄럼방지 실내화</span>
+                                </label>
+                            </li>
+
+                            <!-- 💡 두 줄짜리 텍스트 -->
+                            <li class="two-lines">
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt"><em>(필요한 경우)</em><br>익숙한 담요나 베개</span>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">양말, 여벌 옷, 기저귀</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">개인 물병 또는 물컵</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">개인적으로 필요한 물품</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" class="hidden-check">
+                                    <span class="custom-box"></span>
+                                    <span class="txt">아이가 좋아하는 장난감·책</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. 주의사항 박스 (파란색) -->
+                    <div class="prep-box box-blue">
+                        <!-- 라벨 (선 위에 걸치는 부분) -->
+                        <div class="box-label label-blue">
+                            <!-- 별 이미지 (경로를 실제 이미지로 변경하세요) -->
+                            <img src="./images/sub/2/star_yell.svg" alt="별" class="badge-img">
+                            <span>주의사항</span>
+                        </div>
+
+                        <!-- 내부 주의사항 리스트 -->
+                        <ul class="caution-list">
+                            <li>귀중품은 가급적 소지하지 않습니다.</li>
+                            <li>컵, 수건, 실내화 등은 <strong>개별적으로 준비해 주세요.</strong></li>
+                            <li>간식 및 음식물은 <strong>병동 안내에 따라 준비해 주세요.</strong></li>
+                            <li>개인 물품에는 <strong>분실 방지를 위해 이름을 표시해 주세요.</strong></li>
+                            <li>복용 중인 약은 <strong>처방전 또는 약 봉투와 함께 준비해 주세요.</strong></li>
+                            <li>입원 당일에는 보호자 신분증 및 필요한 서류를 지참해 주세요.</li>
+                            <li>보호자용 침구는 기본 제공되며,<br><strong>추가로 필요한 경우 미리 준비해 주세요.</strong></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 입원 생활 안내 -->
+        <section class="hospital-life-section">
+            <!-- 배경 장식 (별 이미지) - 위치는 CSS에서 absolute로 잡아줍니다 -->
+            <img src="./images/sub/2/star_blue.svg" alt="star" class="deco-star star-blue">
+            <img src="./images/sub/2/star_yell.svg" alt="star" class="deco-star star-yellow">
+
+            <div class="inner-wrap">
+
+                <!-- 왼쪽: 아코디언 콘텐츠 영역 -->
+                <div class="content-left">
+                    <div class="section-title-wrap">
+                        <h2>입원 생활 안내</h2>
+                        <p>아이가 안전한 환경에서 안심하고 치료에 집중할 수 있도록,<br>병실 생활 및 보호자 안내 사항을 알려드립니다.</p>
+                    </div>
+
+                    <ul class="accordion-list">
+                        <!-- 아코디언 아이템 1: 식사 안내 -->
+                        <li class="accordion-item">
+                            <div class="acc-header">
+                                <span class="acc-title">식사 안내</span>
+                                <img src="./images/sub/2/adm_mark.svg" alt="열기" class="acc-arrow">
+                            </div>
+                            <div class="acc-content">
+
+                                <!-- 1. 식사 시간 텍스트 -->
+                                <div class="meal-time">
+                                    아침 7:30 / 점심 12:00 / 저녁 17:30
+                                </div>
+
+                                <!-- 2. 완벽한 동그라미 점선 -->
+                                <div class="dotted-line"></div>
+
+                                <!-- 3. 상세 안내 리스트 (기존에 만들어둔 클래스 그대로 사용) -->
+                                <ul class="acc-info-list">
+                                    <li>환아의 상태에 따라 식사가 제공됩니다.</li>
+                                    <li>외부 음식 반입 시 아이의 치료 및 알레르기 여부를 고려해 주세요.</li>
+                                    <li>음식 알레르기나 식이 제한이 있는 경우 의료진에게 미리 알려주세요.</li>
+                                    <li>이유식은 별도로 제공하지 않습니다. 필요 시 보호자께서 준비해 주세요.</li>
+                                </ul>
+
+                            </div>
+                        </li>
+
+                        <!-- 아코디언 아이템 2 -->
+                        <li class="accordion-item">
+                            <div class="acc-header">
+                                <span class="acc-title">병실 안내</span>
+                                <img src="./images/sub/2/adm_mark.svg" alt="열기" class="acc-arrow">
+                            </div>
+                            <div class="acc-content">
+                                <ul class="acc-info-list">
+                                    <li>개인소지품 분실 시 병원에서는 책임지지 않습니다.</li>
+                                    <li>병동 출입 및 면회는 병원에서 정한 기준을 따라주세요.</li>
+                                    <li>잠시라도 자리를 비울 경우, 담당 간호사에게 알려주세요.</li>
+                                    <li>병실 및 병동 내에서는 다른 환아와 보호자를 배려해 주세요.</li>
+                                    <li>아이의 안전을 위해 보호자는 가능한 한 아이의 곁을 지켜주세요.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- 아코디언 아이템 3 -->
+                        <li class="accordion-item">
+                            <div class="acc-header">
+                                <span class="acc-title">검사 및 치료 안내</span>
+                                <img src="./images/sub/2/adm_mark.svg" alt="열기" class="acc-arrow">
+                            </div>
+                            <div class="acc-content">
+                                <ul class="acc-info-list">
+                                    <li>투약 시간과 방법은 의료진의 안내에 따라주세요.</li>
+                                    <li>검사 및 치료 일정에 따라 이동이 필요할 수 있습니다.</li>
+                                    <li>검사 전 금식 등 별도의 준비가 필요한 경우 의료진이 안내합니다.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- 아코디언 아이템 4 -->
+                        <li class="accordion-item">
+                            <div class="acc-header">
+                                <span class="acc-title">면회 및 보호자 안내</span>
+                                <img src="./images/sub/2/adm_mark.svg" alt="열기" class="acc-arrow">
+                            </div>
+                            <div class="acc-content">
+                                <ul class="acc-info-list">
+                                    <li>보호자 교대가 필요한 경우, 병동 간호사에게 알려주세요.</li>
+                                    <li>면회 가능 시간과 인원은 병원 운영 기준에 따라 달라질 수 있습니다.</li>
+                                    <li>감염 예방을 위해 발열, 기침 등 감염 증상이 있는
+                                        방문객은 면회를 삼가주세요.</li>
+                                    <li>소아 환자는 감염에 취약하므로 열이나 호흡기 증상이 있는<br>
+                                        보호자와 면회객은 상주 및 방문을 제한합니다.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- 아코디언 아이템 5 (디자인상의 내용 적용) -->
+                        <li class="accordion-item">
+                            <div class="acc-header">
+                                <span class="acc-title">안전 및 감염관리 안내</span>
+                                <img src="./images/sub/2/adm_mark.svg" alt="열기" class="acc-arrow">
+                            </div>
+                            <div class="acc-content">
+                                <ul class="acc-info-list">
+                                    <li>병동 내 비상상황 발생 시 직원의 안내에 따라주세요.</li>
+                                    <li>병실(침상머리 콘솔에 위치, 흰색 호출버튼), 화장실, 샤워실에 설치된 <br>간호사 호출버튼(적색)을 누르시기 바랍니다.</li>
+                                    <li>병동 내에서는 손 위생을 철저히 해주세요.</li>
+                                    <li>아이가 병실 밖으로 이동할 때에는 보호자가 동행해 주세요.</li>
+                                    <li>낙상 위험이 있는 아이는 침상 주변 안전에 특히 주의해 주세요.</li>
+                                    <li>아이의 낙상 예방을 위해 침대에서 내려올 때를 제외하고는 침대 난간을 올려주세요.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 오른쪽: 캐릭터 이미지 영역 -->
+                <div class="content-right">
+                    <img src="./images/sub/2/char_Y_G.svg" alt="char" class="char-img">
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- 퇴원 절차 -->
+        <section class="discharge-procedure" id="discharge-procedure">
+            <div class="inner-wrap">
+
+                <!-- 타이틀 -->
+                <h2 class="title">퇴원 절차</h2>
+
+                <!-- 안내 박스 -->
+                <div class="info-box">
+                    <strong class="info-title">
+                        <span class="exclamation"><img src="./images/sub/2/!.svg" alt=""></span> 퇴원 전 확인해 주세요.
+                    </strong>
+                    <ul class="info-list">
+                        <li>
+                            필요한 서류나 영상(CD) 자료가 있으신 경우, <strong>미리 확인하시어 퇴원 전날까지 간호사실에 신청해 주시기 바랍니다.</strong><br>
+                            <span class="sub-note">(* 주말 및 공휴일 퇴원 환자분은 미리 말씀해 주세요.)</span>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <!-- 타임라인 라인 & 노드 영역 -->
+                <div class="timeline-wrapper-dis">
+                    <!-- ⭐️ 너비 1300px에 맞게 굴곡 지점을 넓힌 SVG -->
+                    <svg class="path-svg" preserveAspectRatio="none" viewBox="0 0 1300 800">
+                        <path d="M 0,120 
+                         L 1200,120 Q 1250,120 1250,170 
+                         L 1250,320 Q 1250,370 1200,370 
+                         L 100,370 Q 50,370 50,420 
+                         L 50,570 Q 50,620 100,620 
+                         L 1300,620" fill="none" stroke="#4A9BB8" stroke-width="4"
+                            vector-effect="non-scaling-stroke" />
+                    </svg>
+
+                    <!-- Step 1: 퇴원 결정 -->
+                    <div class="timeline-point-dis fade-target delay-1" style="left: 10%; top: 15%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/dis_icon1.svg" alt="dis_icon"></div>
+                        <div class="text-wrap">
+                            <h4>퇴원 결정</h4>
+                            <p>담당 의료진의 판단에<br>따라 퇴원이 결정됩니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: 퇴원 안내 -->
+                    <div class="timeline-point-dis fade-target delay-2" style="left: 75%; top: 15%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/dis_icon2.svg" alt="dis_icon"></div>
+                        <div class="text-wrap">
+                            <h4>퇴원 안내</h4>
+                            <p>퇴원 후 필요한 주의사항과 복약 방법,<br>다음 진료 일정을 안내해 드립니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: 진료비 수납 -->
+                    <div class="timeline-point-dis fade-target delay-3" style="left: 45%; top: 46.25%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/dis_icon3.svg" alt="dis_icon"></div>
+                        <div class="text-wrap">
+                            <h4>진료비 수납</h4>
+                            <p>진료비 심사가 완료되면<br>원무 창구에서 진료비를 수납합니다.</p>
+                            <span class="small-note">* 진료비 심사 완료까지 다소 시간이 소요될 수 있으니,<br> 양해부탁드립니다.</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: 퇴원 약 수령 -->
+                    <div class="timeline-point-dis fade-target delay-4" style="left: 20%; top: 77.5%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/dis_icon4.svg" alt="dis_icon"></div>
+                        <div class="text-wrap">
+                            <h4>퇴원 약 수령</h4>
+                            <p>처방받은 약이 있는 경우,<br>복약 방법과 주의사항을 확인한 후 약을 수령합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: 귀가 -->
+                    <div class="timeline-point-dis fade-target delay-5" style="left: 78%; top: 77.5%;">
+                        <div class="dot"></div>
+                        <div class="icon"><img src="./images/sub/2/dis_icon5.svg" alt="dis_icon"></div>
+                        <div class="text-wrap">
+                            <h4>귀가</h4>
+                            <p>퇴원에 필요한 준비를 마친 후<br>개인 물품을 확인하고 귀가합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- ⭐️ 오른쪽 맨 끝 캐릭터 배치 -->
+                    <div class="timeline-point-dis char-point fade-target delay-5" style="left: 100%; top: 77.5%;">
+                        <div class="icon char-icon"><img src="./images/sub/2/dis_y.svg" alt="dis"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 퇴원 후 주의사항 -->
+        <section class="pd-section">
+            <div class="pd-inner-wrap">
+
+                <!-- 타이틀 -->
+                <h2 class="pd-main-title">퇴원 후 주의사항</h2>
+
+                <!-- 전체 레이아웃 (좌/우 2단) -->
+                <div class="pd-flex-container">
+
+                    <!-- 왼쪽 단 (너비: 513px) -->
+                    <div class="pd-col-left">
+
+                        <!-- 1. 이런 증상이 나타나면 (노란색 박스) -->
+                        <div class="pd-box border-yellow">
+                            <div class="pd-label label-left bg-yellow">
+                                <img src="./images/sub/2/dis_star.svg" alt="별" class="badge-icon">
+                                이런 증상이 나타나면
+                            </div>
+
+                            <ul class="pd-list">
+                                <li>고열이 지속되는 경우</li>
+                                <li>호흡이 힘들어 보이는 경우</li>
+                                <li>심한 구토나 설사가 지속되는 경우</li>
+                                <li>통증이 심해지는 경우</li>
+                                <li>경련 등 평소와 다른 증상이 나타나는 경우</li>
+                                <li>낙상이나 부딪힘 등 안전사고가 발생한 경우</li>
+                                <li>의식이나 행동에 평소와 다른 변화가 있는 경우</li>
+                                <li>평소보다 심하게 처지거나 반응이 떨어지는 경우</li>
+                            </ul>
+
+                            <!-- 4px 노란색 동그라미 점선 -->
+                            <div class="pd-dotted-line"></div>
+
+                            <div class="pd-warning-text">
+                                증상이 심하거나 갑자기 악화되는 경우에는<br>
+                                <span class="txt-blue">즉시 의료기관의 진료가 필요합니다.</span>
+                                <div class="tel-number">대표번호 <strong>055-123-4567</strong></div>
+                            </div>
+                        </div>
+
+                        <!-- 2. 체크리스트 (청록색 박스) -->
+                        <div class="pd-box border-teal">
+                            <div class="pd-label label-left bg-teal">
+                                <img src="./images/sub/2/dis_check.svg" alt="체크" class="badge-icon">
+                                체크리스트
+                            </div>
+
+                            <ul class="pd-checklist">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="pd-hidden-check">
+                                        <span class="pd-custom-box"></span>
+                                        <span class="txt">개인 물품을 모두 챙겼나요?</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="pd-hidden-check">
+                                        <span class="pd-custom-box"></span>
+                                        <span class="txt">다음 진료 일정을 확인했나요?</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="pd-hidden-check">
+                                        <span class="pd-custom-box"></span>
+                                        <span class="txt">필요한 진료 서류를 신청했나요?</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="pd-hidden-check">
+                                        <span class="pd-custom-box"></span>
+                                        <span class="txt">처방받은 약과 복용 방법을 확인했나요?</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽 단 (너비: 570px) -->
+                    <div class="pd-col-right">
+
+                        <!-- 3. 복약 -->
+                        <div class="pd-box border-teal pd-has-img bg-pill">
+                            <div class="pd-label label-center bg-teal">복약</div>
+                            <ul class="pd-list">
+                                <li>임의로 복용을 중단하거나 다른 약을 추가하지 마세요.</li>
+                                <li>복용 후 이상 증상이 나타나는 경우 의료기관에 문의해 주세요.</li>
+                                <li>처방받은 약은 의료진의 안내에 따라<br>정해진 시간과 용량을 지켜 복용해 주세요.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. 식사 및 생활 -->
+                        <div class="pd-box border-teal pd-has-img bg-plate">
+                            <div class="pd-label label-center bg-teal">식사 및 생활</div>
+                            <ul class="pd-list">
+                                <li>충분한 수분 섭취와 휴식을 권장합니다.</li>
+                                <li>의료진이 별도로 안내한 식이 또는 활동 제한이 있다면,<br>해당 지침을 따라주세요.</li>
+                                <li>퇴원 직후에는 아이의 상태에 맞춰 무리하지 않고,<br>일상생활로 돌아갈 수 있도록 해주세요.</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5. 외래 진료 및 추후 관리 -->
+                        <div class="pd-box border-teal pd-has-img bg-steth">
+                            <div class="pd-label label-center bg-teal">외래 진료 및 추후 관리</div>
+                            <ul class="pd-list">
+                                <li>안내받은 외래 진료일을 확인합니다.</li>
+                                <li>필요한 검사나 추적관찰 일정을 확인합니다.</li>
+                                <li>퇴원 후 궁금한 사항이나 증상 변화가 있다면,<br>의료기관에 문의해주세요.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- footer st -->
+        <footer class="footer">
+            <div class="footer-inner">
+
+
+                <!-- 상단 로고 (단독 행) -->
+                <div class="footer-top">
+                    <h2 class="footer-logo">
+                        <img src="./images/layout/footer_logo.svg" alt="아이오션병원 로고">
+                    </h2>
+                </div>
+
+                <!-- 하단 텍스트 영역 (동일한 선상 정렬) -->
+                <div class="footer-bottom">
+
+                    <!-- 병원 정보 -->
+                    <div class="footer-info footer-block">
+                        <div class="infomation-item">
+                            <p class="label">주소</p>
+                            <p class="value">경남 거제시 거제중앙로 1938</p>
+                        </div>
+                        <div class="infomation-item">
+                            <!-- <p class="label"><a href="#">이용약관</a></p> -->
+                            <p class="value">
+                                <a href="#">이용약관</a> <b>·</b>
+                                <a href="#">개인정보처리방침</a> <b>·</b> <a href="#">환자권리장전</a> <b>·</b> <a href="#">오시는 길</a>
+                            </p>
+                        </div>
+                        <p class="copyright">
+                            copyright © IOCEAN HOSPITAL. All rights reserved.
+                        </p>
+                    </div>
+
+                    <!-- 진료시간 -->
+                    <div class="footer-time footer-block">
+                        <p class="label">진료 시간</p>
+                        <div class="value">
+                            <div class="time-row">
+                                <span>평일</span>
+                                <span>09:00 - 18:00</span>
+                            </div>
+                            <div class="time-row">
+                                <span>주말 및 공휴일</span>
+                                <span>09:00 - 13:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 점심시간 및 야간진료 -->
+                    <div class="footer-lunch">
+                        <div class="lunch-row">
+                            <p class="label">점심시간</p>
+                            <p class="value">13:00 - 14:00</p>
+                        </div>
+                        <div class="lunch-row">
+                            <p class="label">평일 야간(수)</p>
+                            <p class="value">18:00 - 21:00</p>
+                        </div>
+                    </div>
+
+                    <!-- 대표번호 -->
+                    <div class="footer-contact footer-block">
+                        <p class="label">대표 번호</p>
+                        <div class="value">
+                            <a href="tel:055-123-4567" class="tel-link">055-123-4567</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- footer end-->
+
+    </div>
+
+
+
+
+
+
+
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="js/script2.js"></script>
+
+    <!-- AOS js 적용 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+    <!-- ==========================================
+       플로팅 퀵 메뉴
+    ========================================== -->
+    <div class="floating-menu">
+
+        <!-- 숨겨진 퀵 아이콘 메뉴 (호버 시 등장) -->
+        <div class="quick-icons">
+            <a href="#none" title="캘린더"><img src="./images/button/calendar.svg" alt="캘린더"></a>
+            <a href="tel:055-123-4567" title="전화"><img src="./images/button/call.svg" alt="전화"></a>
+            <a href="#none" title="상담"><img src="./images/button/message.svg" alt="상담"></a>
+        </div>
+
+        <!-- 캐릭터 영역 (기본/호버 이미지 2장 겹쳐두기) -->
+        <div class="quick-char">
+            <img src="./images/button/basic.svg" alt="기존" class="char-default">
+            <img src="./images/button/hover.svg" alt="호버" class="char-hover">
+        </div>
+
+        <!-- 탑 버튼 -->
+        <button type="button" class="btn-top" aria-label="상단으로 이동">
+            <span class="arrow"></span>
+        </button>
+
+    </div>
+    <!-- 플로팅 퀵 메뉴 끝 -->
+
+
+</body>
+
+</html>
