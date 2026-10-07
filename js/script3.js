@@ -124,18 +124,102 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// ==========================================
-// 탑 버튼 클릭 시 부드럽게 맨 위로 이동
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const btnTop = document.querySelector('.btn-top');
+// 플로팅 퀵 메뉴 + TOP 버튼
+function initFloatingMenu() {
+    const floatingMenu = document.querySelector('.floating-menu');
 
-    if (btnTop) {
-        btnTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    if (!floatingMenu) return;
+
+    const quickWrap = floatingMenu.querySelector('.quick-menu-wrap');
+    const quickChar = floatingMenu.querySelector('.quick-char');
+    const quickIcons = floatingMenu.querySelector('.quick-icons');
+    const btnTop = floatingMenu.querySelector('.btn-top');
+
+    function setMenuOpen(isOpen) {
+        quickWrap.classList.toggle('is-open', isOpen);
+        quickChar.setAttribute('aria-expanded', String(isOpen));
+        quickChar.setAttribute(
+            'aria-label',
+            isOpen ? '퀵 메뉴 닫기' : '퀵 메뉴 열기'
+        );
+
+        // 닫힌 메뉴의 링크는 키보드로 선택되지 않게 처리
+        quickIcons.inert = !isOpen;
     }
-});
+
+    setMenuOpen(false);
+
+    // 마우스를 캐릭터 영역에 올리면 열기
+    quickWrap.addEventListener('pointerenter', (event) => {
+        if (event.pointerType === 'mouse') {
+            setMenuOpen(true);
+        }
+    });
+
+    // 캐릭터와 아이콘 영역을 벗어나면 닫기
+    quickWrap.addEventListener('pointerleave', (event) => {
+        if (event.pointerType === 'mouse') {
+            setMenuOpen(false);
+        }
+    });
+
+    // 터치 또는 키보드로 캐릭터 버튼을 누르면 열기/닫기
+    quickChar.addEventListener('click', (event) => {
+        const isMouseClick =
+            event.detail > 0 &&
+            window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+        if (isMouseClick) {
+            setMenuOpen(true);
+        } else {
+            setMenuOpen(!quickWrap.classList.contains('is-open'));
+        }
+    });
+
+    // 키보드 포커스가 퀵 메뉴 밖으로 이동하면 닫기
+    quickWrap.addEventListener('focusout', (event) => {
+        if (!quickWrap.contains(event.relatedTarget)) {
+            setMenuOpen(false);
+        }
+    });
+
+    // TOP 버튼에 마우스를 올리거나 포커스하면 닫기
+    btnTop.addEventListener('pointerenter', () => {
+        setMenuOpen(false);
+    });
+
+    btnTop.addEventListener('focus', () => {
+        setMenuOpen(false);
+    });
+
+    // TOP 버튼 클릭 시 맨 위로 이동
+    btnTop.addEventListener('click', () => {
+        setMenuOpen(false);
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 바깥 영역 클릭 시 닫기
+    document.addEventListener('pointerdown', (event) => {
+        if (!quickWrap.contains(event.target)) {
+            setMenuOpen(false);
+        }
+    });
+
+    // ESC 키로 닫기
+    floatingMenu.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            quickChar.focus();
+            setMenuOpen(false);
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingMenu);
+} else {
+    initFloatingMenu();
+}
