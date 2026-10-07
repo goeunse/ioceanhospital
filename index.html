@@ -7,9 +7,6 @@
     <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
     <title>아이오션병원</title>
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
-
     <!-- webfont 연결-->
     <!-- font-family: 'Pretendard'; -->
     <!-- font-family: 'SUITE', sans-serif; -->
@@ -21,9 +18,16 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
 
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
     <!-- css 연결-->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+
 </head>
 
 <body>
@@ -36,47 +40,47 @@
 
 
                 <h1 class="logo">
-                    <a href="#"><img src="./images/layout/header_logo.svg" alt="logo"></a>
+                    <a href="./index.html"><img src="./images/layout/header_logo.svg" alt="logo"></a>
                 </h1>
 
                 <ul class="gnb">
                     <li> <!-- 1 -->
-                        <a href="#">아이오션 소개</a>
+                        <a href="./sub1.html">아이오션 소개</a>
 
                         <!-- submenu -->
                         <div class="submenu">
                             <ul class="inner_submenu">
-                                <li><a href="">병원 소개</a></li>
-                                <li><a href="">의료진 소개</a></li>
-                                <li><a href="">캐릭터 소개</a></li>
+                                <li><a href="./sub1.html#hospintro">병원 소개</a></li>
+                                <li><a href="./sub1.html#doctor-section">의료진 소개</a></li>
+                                <li><a href="./sub1.html#character-section">캐릭터 소개</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <li> <!-- 2 -->
-                        <a href="#">진료 과목</a>
+                        <a href="./index.html#medical-section">진료 과목</a>
                     </li>
 
                     <li> <!-- 3 -->
-                        <a href="#">입·퇴원 안내</a>
+                        <a href="./sub2.html">입·퇴원 안내</a>
 
                         <!-- submenu -->
                         <div class="submenu">
                             <ul class="inner_submenu">
-                                <li><a href="">입원 안내</a></li>
-                                <li><a href="">퇴원 안내</a></li>
+                                <li><a href="./sub2.html#admission-procedure">입원 안내</a></li>
+                                <li><a href="./sub2.html#discharge-procedure">퇴원 안내</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <li> <!-- 4 -->
-                        <a href="#">아이오션 이야기</a>
+                        <a href="./sub3.html">아이오션 이야기</a>
 
                         <!-- submenu -->
                         <div class="submenu">
                             <ul class="inner_submenu">
-                                <li><a href="">아이오션 소개</a></li>
-                                <li><a href="">공지사항</a></li>
+                                <li><a href="./sub3.html#tv-section">아이오션 소개</a></li>
+                                <li><a href="./sub3.html#notice-section">공지사항</a></li>
                             </ul>
                         </div>
                     </li>
@@ -179,7 +183,7 @@
         <div id="container">
 
             <!-- 진료과목 -->
-            <section class="medical-section">
+            <section class="medical-section" id="medical-section">
 
                 <!-- 섹션 제목 -->
                 <div class="medical-title">
@@ -226,15 +230,15 @@
                         <!-- 일반 진료 -->
                         <div class="medical-content active" id="general">
 
-                            <div class="medical-text">
+                            <div class="medical-text" data-aos="fade-right" data-aos-duration="1500">
                                 <h3>일반 진료</h3>
                             </div>
 
-                            <div class="medical-character">
+                            <div class="medical-character" data-aos="fade-right" data-aos-duration="1500">
                                 <img src="./images/main/sec1.svg" alt="일반 진료">
                             </div>
 
-                            <div class="medical-cards">
+                            <div class="medical-cards" data-aos="fade-left" data-aos-duration="1800">
 
                                 <div class="medical-card">
                                     <p>호흡기 질환</p>
@@ -439,7 +443,7 @@
                 <div class="doctor-list">
 
                     <!-- 김하린 -->
-                    <div class="doctor-card blue">
+                    <div class="doctor-card blue" data-aos="flip-left" data-aos-duration="2000">
 
                         <div class="doctor-image">
                             <img src="./images/main/doc1.png" alt="김하린 원장">
@@ -456,7 +460,7 @@
                                 <span>#성장 클리닉</span>
                             </div>
 
-                            <button type="button" class="doctor-more" data-url="./doctor/kim-harin.html">
+                            <button type="button" class="doctor-more" data-url="./sub1.html#kim-doc">
                                 더보기
                             </button>
                         </div>
@@ -464,7 +468,7 @@
                     </div>
 
                     <!-- 정유진 -->
-                    <div class="doctor-card yellow">
+                    <div class="doctor-card yellow" data-aos="flip-left" data-aos-duration="2000">
 
                         <div class="doctor-image cloy">
                             <img src="./images/main/doc2.png" alt="정유진 원장">
@@ -483,7 +487,7 @@
                                 <span>#영유아 검진</span>
                             </div>
 
-                            <button type="button" class="doctor-more cloy" data-url="./doctor/jung-yujin.html">
+                            <button type="button" class="doctor-more cloy" data-url="./sub1.html#jeong-doc">
                                 더보기
                             </button>
                         </div>
@@ -492,7 +496,7 @@
 
 
                     <!-- 박서준 -->
-                    <div class="doctor-card blue">
+                    <div class="doctor-card blue" data-aos="flip-left" data-aos-duration="2000">
 
                         <div class="doctor-image">
                             <img src="./images/main/doc3.png" alt="박서준 원장">
@@ -509,7 +513,7 @@
                                 <span>#구강 검진</span>
                             </div>
 
-                            <button type="button" class="doctor-more" data-url="./doctor/park-seojun.html">
+                            <button type="button" class="doctor-more" data-url="./sub1.html#park-doc">
                                 더보기
                             </button>
                         </div>
@@ -517,7 +521,7 @@
                     </div>
 
                     <!-- 이준호 -->
-                    <div class="doctor-card yellow">
+                    <div class="doctor-card yellow" data-aos="flip-left" data-aos-duration="2000">
 
                         <div class="doctor-image cloy">
                             <img src="./images/main/doc4.png" alt="이준호 원장">
@@ -535,7 +539,7 @@
                                 <span>#ADHD</span>
                             </div>
 
-                            <button type="button" class="doctor-more cloy" data-url="./doctor/lee-junho.html">
+                            <button type="button" class="doctor-more cloy" data-url="./sub1.html#lee-doc">
                                 더보기
                             </button>
                         </div>
@@ -651,7 +655,7 @@
                                         <div class="img-placeholder bg-1"></div>
                                         <span>놀이 공간</span>
 
-                                        <a href="#link" class="btn-more">
+                                        <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -659,7 +663,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-2"></div><span>다인실</span>
 
-                                        <a href="#link" class="btn-more">
+                                        <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -667,7 +671,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-3"></div><span>대기실</span>
 
-                                        <a href="#link" class="btn-more">
+                                        <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -675,7 +679,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-4"></div><span>X-Ray실</span>
 
-                                        <a href="#link" class="btn-more">
+                                        <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -683,7 +687,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-5"></div><span>수유실</span>
 
-                                        <a href="#link" class="btn-more">
+                                        <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -691,7 +695,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-6"></div><span>접수·수납</span>
 
-                                        <a href="#link" class="btn-more">
+                                      <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -699,7 +703,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-7"></div><span>진료실 1</span>
 
-                                        <a href="#link" class="btn-more">
+                                       <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -707,7 +711,7 @@
                                     <div class="tour-item">
                                         <div class="img-placeholder bg-8"></div><span>치과</span>
 
-                                        <a href="#link" class="btn-more">
+                                       <a href="./sub1.html#tour-section" class="btn-more">
                                             <div class="txt">더보기</div>
                                             <img src="./images/main/view.svg" alt="더보기">
                                         </a>
@@ -723,12 +727,17 @@
             </div>
 
         </div>
-
+        <!-- 콘텐츠 -->
 
 
         <!-- footer st -->
         <footer class="footer">
             <div class="footer-inner">
+
+                <!-- 🎈 둥둥 떠다니는 유자 캐릭터 추가 -->
+                <div class="footer-yooza">
+                    <img src="./images/layout/character.svg" alt="풍선 든 유자">
+                </div>
 
                 <!-- 상단 로고 (단독 행) -->
                 <div class="footer-top">
@@ -773,15 +782,16 @@
                         </div>
                     </div>
 
-                    <!-- 점심시간 -->
+                    <!-- 점심시간 및 야간진료 -->
                     <div class="footer-lunch">
-                        <!-- 점심시간 라벨과 시간을 한 줄로 묶기 -->
                         <div class="lunch-row">
                             <p class="label">점심시간</p>
                             <p class="value">13:00 - 14:00</p>
                         </div>
-                        <!-- 안내 문구를 밖으로 빼서 점심시간 글자 바로 밑에 오도록 배치 -->
-                        <p class="notice">※ 진료 일정은 홈페이지를 확인해 주세요.</p>
+                        <div class="lunch-row">
+                            <p class="label">평일 야간(수)</p>
+                            <p class="value">18:00 - 21:00</p>
+                        </div>
                     </div>
 
                     <!-- 대표번호 -->
@@ -798,18 +808,10 @@
         <!-- footer end-->
 
     </div>
-    <!-- 콘텐츠 -->
-
-
-    <div class="medical-inner"></div>
-    </div>
-
-
-
-
-
     <!-- wrap -->
-    </div>
+
+
+
 
 
     <script src="js/jquery-4.0.0.min.js"></script>
@@ -817,6 +819,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 
+    <!-- AOS js 적용 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 
