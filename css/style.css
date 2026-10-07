@@ -1182,8 +1182,8 @@ body {
 }
 
 .news-title p {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
     color: #999;
 }
 
@@ -1959,44 +1959,70 @@ body {
 
 
 
-
-/* ========================================
-   플로팅 메뉴 (Quick Menu)
-======================================== */
+/* ==========
+플로팅
+================ */
+/* 플로팅 메뉴 위치 */
 .floating-menu {
     position: fixed;
     right: 40px;
-    /* 화면 오른쪽에서 띄울 간격 */
     bottom: 50px;
-    /* 화면 아래쪽에서 띄울 간격 */
     z-index: 9999;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* 캐릭터 박스와 탑 버튼 사이의 간격 */
 }
 
-/* 호버 시 나타나는 둥근 캡슐 모양 메뉴 */
+/* 캐릭터 영역 */
+.quick-menu-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+/* 숨겨진 퀵 아이콘 */
 .quick-icons {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    width: 80px;
+    height: 270px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: 80px;
-    height: 270px;
+
     border: 3px solid #AFCFDD;
     border-radius: 50px;
     background-color: rgba(249, 250, 252, 0.3);
     backdrop-filter: blur(10px);
 
-    /* 기본 숨김 상태 설정 */
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateY(20px);
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    margin-bottom: 5px;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 캐릭터에서 아이콘으로 이동할 때 메뉴가 닫히지 않도록 연결 */
+.quick-icons::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -3px;
+    width: 80px;
+    height: 28px;
 }
 
 .quick-icons a {
@@ -2006,6 +2032,7 @@ body {
 }
 
 .quick-icons img {
+    display: block;
     width: 60px;
     height: 60px;
     transition: transform 0.2s ease;
@@ -2013,21 +2040,25 @@ body {
 
 .quick-icons a:hover img {
     transform: scale(1.15);
-    /* 마우스 올리면 아이콘 살짝 커짐 */
 }
 
-/* 캐릭터 네모 박스 */
+/* 캐릭터 버튼 */
 .quick-char {
     position: relative;
+    display: block;
+
     width: 80px;
     height: 80px;
+    padding: 0;
+    border: 0;
     border-radius: 20px;
-    background-color: rgba(245, 247, 250, 0.6);
-    /* 기본 파란색 그림자 */
-    box-shadow: 0 0 25px rgba(74, 155, 184, 0.4);
-    transition: all 0.3s ease;
-    cursor: pointer;
     overflow: hidden;
+
+    background-color: rgba(245, 247, 250, 0.6);
+    box-shadow: 0 0 25px rgba(74, 155, 184, 0.4);
+    cursor: pointer;
+
+    transition: box-shadow 0.3s ease;
 }
 
 .quick-char img {
@@ -2035,69 +2066,79 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     width: 100%;
     height: auto;
+    pointer-events: none;
+
     transition: opacity 0.3s ease;
 }
 
-/* 호버 전용 캐릭터 이미지는 처음에 숨겨둠 */
+.quick-char .char-default {
+    opacity: 1;
+}
+
 .quick-char .char-hover {
     opacity: 0;
 }
 
-/* ========================================
-   마우스 호버(오버) 시 작동하는 애니메이션
-======================================== */
-.floating-menu:hover .quick-icons {
+/* JavaScript로 열림 상태 제어 */
+.quick-menu-wrap.is-open .quick-icons {
     opacity: 1;
-    /* 숨겨진 캡슐 메뉴 나타남 */
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
-    /* 아래에서 위로 슥 올라옴 */
 }
 
-.floating-menu:hover .quick-char {
-    /* 호버 시 노란색 그림자로 변경 */
+.quick-menu-wrap.is-open .quick-char {
     box-shadow: 0 0 25px rgba(246, 202, 70, 0.4);
 }
 
-/* 캐릭터 교체 애니메이션 */
-.floating-menu:hover .char-default {
+.quick-menu-wrap.is-open .char-default {
     opacity: 0;
-    /* 기본 캐릭터 숨김 */
 }
 
-.floating-menu:hover .char-hover {
+.quick-menu-wrap.is-open .char-hover {
     opacity: 1;
-    /* 웃는 캐릭터 등장 */
 }
 
-/* ========================================
-   맨 위로 가기 (탑 버튼)
-======================================== */
+/* TOP 버튼 */
 .btn-top {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 3px solid #AFCFDD;
-    background-color: rgba(249, 250, 252, 0.3);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
 
-    background: url(../images/button/arrow.svg) no-repeat center center;
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    padding: 0;
+
+    border: 3px solid #AFCFDD;
+    border-radius: 50%;
+    background-color: rgba(249, 250, 252, 0.3);
+    background-image: url(../images/button/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .btn-top:hover {
     background-color: #F5F7FA;
     transform: translateY(-2px);
-    /* 누르기 좋게 위로 살짝 들림 */
 }
 
-
+.quick-char:focus-visible,
+.btn-top:focus-visible,
+.quick-icons a:focus-visible {
+    outline: 3px solid #4A9BB8;
+    outline-offset: 4px;
+}
 
 
 /* =========================
