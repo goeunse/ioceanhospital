@@ -43,18 +43,20 @@
                 </h1>
 
                 <ul class="gnb">
+
                     <li> <!-- 1 -->
-                        <a href="#">아이오션 소개</a>
+                        <a href="./sub1.html">아이오션 소개</a>
 
                         <!-- submenu -->
                         <div class="submenu">
                             <ul class="inner_submenu">
-                                <li><a href="">병원 소개</a></li>
-                                <li><a href="">의료진 소개</a></li>
-                                <li><a href="">캐릭터 소개</a></li>
+                                <li><a href="./sub1.html#hospintro">병원 소개</a></li>
+                                <li><a href="./sub1.html#doctor-section">의료진 소개</a></li>
+                                <li><a href="./sub1.html#character-section">캐릭터 소개</a></li>
                             </ul>
                         </div>
                     </li>
+
 
                     <li> <!-- 2 -->
                         <a href="./index.html#medical-section">진료 과목</a>
@@ -765,20 +767,29 @@
     ========================================== -->
     <div class="floating-menu">
 
-        <!-- 숨겨진 퀵 아이콘 메뉴 (호버 시 등장) -->
-        <div class="quick-icons">
-            <a href="#none" title="캘린더"><img src="./images/button/calendar.svg" alt="캘린더"></a>
-            <a href="tel:055-123-4567" title="전화"><img src="./images/button/call.svg" alt="전화"></a>
-            <a href="#none" title="상담"><img src="./images/button/message.svg" alt="상담"></a>
+        <!-- 아이콘 + 캐릭터만 호버 영역으로 묶기 -->
+        <div class="quick-menu-wrap">
+
+            <div class="quick-icons">
+                <a href="#none" title="캘린더">
+                    <img src="./images/button/calendar.svg" alt="캘린더">
+                </a>
+                <a href="tel:055-123-4567" title="전화">
+                    <img src="./images/button/call.svg" alt="전화">
+                </a>
+                <a href="#none" title="상담">
+                    <img src="./images/button/message.svg" alt="상담">
+                </a>
+            </div>
+
+            <div class="quick-char">
+                <img src="./images/button/basic.svg" alt="기존" class="char-default">
+                <img src="./images/button/hover.svg" alt="호버" class="char-hover">
+            </div>
+
         </div>
 
-        <!-- 캐릭터 영역 (기본/호버 이미지 2장 겹쳐두기) -->
-        <div class="quick-char">
-            <img src="./images/button/basic.svg" alt="기존" class="char-default">
-            <img src="./images/button/hover.svg" alt="호버" class="char-hover">
-        </div>
-
-        <!-- 탑 버튼 -->
+        <!-- TOP 버튼은 호버 영역 밖에 배치 -->
         <button type="button" class="btn-top" aria-label="상단으로 이동">
             <span class="arrow"></span>
         </button>
