@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이오션 소개</title>
+
+
+
+    <!-- webfont 연결-->
+    <!-- font-family: 'Pretendard'; -->
+    <!-- font-family: 'SUITE', sans-serif; -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/static/woff2/SUITE.css" rel="stylesheet">
+
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- css 연결-->
+    <link rel="stylesheet" href="css/style1.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div id="wrap">
+
+
+        <!-- header st-->
+        <div id="header">
+            <div class="inner_header">
+
+
+                <h1 class="logo">
+                    <a href="./index.html"><img src="./images/layout/header_logo.svg" alt="logo"></a>
+                </h1>
+
+                <ul class="gnb">
+                    <li> <!-- 1 -->
+                        <a href="./sub1.html">아이오션 소개</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub1.html#hospintro">병원 소개</a></li>
+                                <li><a href="./sub1.html#doctor-section">의료진 소개</a></li>
+                                <li><a href="./sub1.html#character-section">캐릭터 소개</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li> <!-- 2 -->
+                        <a href="./index.html#medical-section">진료 과목</a>
+                    </li>
+
+                    <li> <!-- 3 -->
+                        <a href="./sub2.html">입·퇴원 안내</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub2.html#admission-procedure">입원 안내</a></li>
+                                <li><a href="./sub2.html#discharge-procedure">퇴원 안내</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li> <!-- 4 -->
+                        <a href="./sub3.html">아이오션 이야기</a>
+
+                        <!-- submenu -->
+                        <div class="submenu">
+                            <ul class="inner_submenu">
+                                <li><a href="./sub3.html#tv-section">아이오션 소개</a></li>
+                                <li><a href="./sub3.html#notice-section">공지사항</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- header fi-->
+
+        <!-- 배너 -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">아이오션 소개</h2>
+
+                <ul class="hero-menu">
+                    <!-- 첫 번째 메뉴는 기본적으로 active 상태로 둡니다. -->
+                    <li><a href="#hospintro" class="active">병원 소개</a></li>
+                    <li><a href="#doctor-section">의료진 소개</a></li>
+                    <li><a href="#character-section">캐릭터 소개</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- 인사말 -->
+        <div class="hospintro" id="hospintro">
+
+            <div class="hospintro-inner">
+
+                <!-- 왼쪽 인사말 -->
+                <div class="greeting-text">
+                    <h2>인사말</h2>
+
+                    <h3>
+                        아이의 건강한 성장을 함께합니다.
+                    </h3>
+
+                    <div class="greeting-desc">
+                        <p>안녕하세요. 아이오션병원입니다.</p>
+
+                        <p>
+                            아이오션병원은 아이가 아프지 않을 때에도<br>
+                            성장하며 새로운 변화를 마주할 때에도<br>
+                            언제든 편안하게 찾을 수 있는 병원이 되고자 합니다.
+                        </p>
+
+                        <p>
+                            무엇보다 아이의 작은 변화에도 귀 기울이고,<br>
+                            보호자의 마음까지 헤아리는 따뜻한 진료와<br>
+                            성장의 모든 순간을 함께 바라보는 전문적인 진료를 통해
+                        </p>
+
+                        <p>
+                            아이에게는 편안한 병원,<br>
+                            보호자에게는 믿을 수 있는 병원이 되겠습니다.
+                        </p>
+
+                        <p>
+                            아이의 건강한 오늘이 행복한 내일로 이어질 수 있도록<br>
+                            아이오션병원이 늘 곁에서 함께하겠습니다.
+                        </p>
+
+                        <p>감사합니다.</p>
+                    </div>
+
+                    <p class="hospital-ceo">
+                        - 아이오션병원 공동대표원장 -
+                    </p>
+                </div>
+
+
+                <!-- 오른쪽 의료진 이미지 -->
+                <div class="greeting-image">
+                    <img src="./images/sub/1/doc_all.svg" alt="아이오션병원 의료진">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 네가지 약속 -->
+        <section class="hospintro">
+
+            <!-- 🌟 움직이는 3D 오브젝트 (달, 별) -->
+            <img src="./images/sub/1/moon.svg" alt="달" class="floating-obj obj-moon">
+            <img src="./images/sub/1/star_blue.svg" alt="파란 별" class="floating-obj obj-star-blue">
+            <img src="./images/sub/1/star_yell.svg" alt="노란 별" class="floating-obj obj-star-yellow">
+
+            <!-- ☁️ 하단 고정 구름 -->
+            <img src="./images/sub/1/cloud_yell.svg" alt="노란 구름" class="cloud-bottom cloud-left">
+            <img src="./images/sub/1/cloud_sky.svg" alt="파란 구름" class="cloud-bottom cloud-right">
+
+            <div class="promise-inner">
+                <!-- 타이틀 -->
+                <h2 class="promise-title">아이오션의 네가지 약속</h2>
+
+                <!-- 타임라인 리스트 -->
+                <div class="promise-list-wrap">
+
+                    <!-- 기준이 되는 노란색 세로 선 -->
+                    <div class="promise-line"></div>
+
+                    <!-- 약속 1 -->
+                    <div class="promise-item">
+                        <div class="num">1</div>
+                        <div class="dot"></div>
+                        <div class="text" data-aos="fade-up" data-aos-duration="1000">
+                            <h3>아이의 마음을 <span>먼저 살핍니다.</span></h3>
+                            <p>아이에게 병원은 낯설고 긴장되는 공간일 수 있습니다.<br>
+                                아이오션병원은 아이의 눈높이에서 천천히 설명하고, 아이가 편안함을 느낄 수 있도록 세심하게 진료합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 약속 2 -->
+                    <div class="promise-item">
+                        <div class="num">2</div>
+                        <div class="dot"></div>
+                        <div class="text" data-aos="fade-up" data-aos-duration="2500">
+                            <h3>보호자의 이야기에 <span>귀 기울입니다.</span></h3>
+                            <p>아이의 건강을 가장 가까이에서 지켜보는 보호자의 작은 걱정과 궁금증까지 세심하게 듣습니다.<br>
+                                충분한 소통을 통해 함께 고민하는 진료를 이어갑니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 약속 3 -->
+                    <div class="promise-item">
+                        <div class="num">3</div>
+                        <div class="dot"></div>
+                        <div class="text" data-aos="fade-up" data-aos-duration="3000">
+                            <h3>성장의 작은 변화도 <span>놓치지 않습니다.</span></h3>
+                            <p>지금 나타난 증상만 바라보는 것이 아니라 아이의 성장과 발달 과정까지 함께 살핍니다.<br>
+                                건강한 오늘이 건강한 내일로 이어질 수 있도록 돕겠습니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 약속 4 -->
+                    <div class="promise-item">
+                        <div class="num">4</div>
+                        <div class="dot"></div>
+                        <div class="text" data-aos="fade-up" data-aos-duration="3000">
+                            <h3>필요한 진료를 <span>명확하게 안내합니다.</span></h3>
+                            <p>어렵고 복잡한 의료 정보를 보호자가 이해하기 쉽도록 알기 쉽게 설명하고,<br>
+                                아이에게 필요한 진료를 함께 찾아갈 수 있도록 안내합니다.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 둘러보기 -->
+        <section class="tour-section">
+            <!-- 섹션 타이틀 -->
+            <div class="tour-title" id="tour-section">
+                <h2>아이오션 둘러보기</h2>
+            </div>
+
+            <!-- 둘러보기 본문 컨테이너 -->
+            <div class="tour-container">
+                <!-- 좌측: 층별 사진 패널 영역 -->
+                <div class="tour-image-wrap">
+                    <div class="tour-panel is-active" id="panel-1">
+                        <img src="./images/sub/1/inside1.png" alt="1층 접수 및 수납 공간">
+                    </div>
+                    <div class="tour-panel" id="panel-2">
+                        <img src="./images/sub/1/inside2.png" alt="2층 대기실">
+                    </div>
+                    <div class="tour-panel" id="panel-3">
+                        <img src="./images/sub/1/inside3.png" alt="2층 치과">
+                    </div>
+                    <div class="tour-panel" id="panel-4">
+                        <img src="./images/sub/1/inside4.png" alt="2층 진료실">
+                    </div>
+                    <div class="tour-panel" id="panel-5">
+                        <img src="./images/sub/1/inside5.png" alt="3층 링겔실">
+                    </div>
+                    <div class="tour-panel" id="panel-6">
+                        <img src="./images/sub/1/inside6.png" alt="3층 건강 검진실">
+                    </div>
+                    <div class="tour-panel" id="panel-7">
+                        <img src="./images/sub/1/inside7.png" alt="3층 발달 평가실">
+                    </div>
+                    <div class="tour-panel" id="panel-8">
+                        <img src="./images/sub/1/inside8.png" alt="3층 호흡기 치료실">
+                    </div>
+                    <div class="tour-panel" id="panel-9">
+                        <img src="./images/sub/1/inside9.png" alt="4·5층 1인실">
+                    </div>
+                    <div class="tour-panel" id="panel-10">
+                        <img src="./images/sub/1/inside10.png" alt="4·5층 면회실">
+                    </div>
+                </div>
+
+                <!-- 우측: 탭 리스트 -->
+                <ul class="tour-tab-list" role="tablist">
+                    <li class="tour-tab-item is-active" role="tab" tabindex="0" aria-controls="panel-1"
+                        aria-selected="true">
+                        <span class="floor">1층</span>
+                        <span class="desc">접수 · 수납</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-2" aria-selected="false">
+                        <span class="floor">2층</span>
+                        <span class="desc">대기실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-3" aria-selected="false">
+                        <span class="floor">2층</span>
+                        <span class="desc">치과</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-4" aria-selected="false">
+                        <span class="floor">2층</span>
+                        <span class="desc">진료실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-5" aria-selected="false">
+                        <span class="floor">3층</span>
+                        <span class="desc">링겔실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-6" aria-selected="false">
+                        <span class="floor">3층</span>
+                        <span class="desc">건강 검진실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-7" aria-selected="false">
+                        <span class="floor">3층</span>
+                        <span class="desc">발달 평가실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-8" aria-selected="false">
+                        <span class="floor">3층</span>
+                        <span class="desc">호흡기 치료실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-9" aria-selected="false">
+                        <span class="floor">4·5층</span>
+                        <span class="desc">1인실</span>
+                    </li>
+                    <li class="tour-tab-item" role="tab" tabindex="0" aria-controls="panel-10" aria-selected="false">
+                        <span class="floor">4·5층</span>
+                        <span class="desc">면회실</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- 오시는 길 -->
+        <section class="location-section">
+            <div class="location-inner">
+                <h2 class="section-title">오시는 길</h2>
+
+                <div class="location-content">
+                    <!-- 지도 -->
+                    <div class="map-area">
+                        <img src="./images/sub/1/location.png" alt="아이오션병원 위치 지도" class="map-image">
+                        <img src="./images/sub/1/location_G.svg" alt="아이오션병원 캐릭터" class="character doctor-character">
+                    </div>
+
+                    <!-- 안내 정보 -->
+                    <div class="info-card">
+                        <div class="info-item address-item">
+                            <div class="info-title">
+                                <span class="info-icon"><img src="./images/sub/1/location_loc.svg" alt="loca"></span>
+                                <h3>병원 주소</h3>
+                            </div>
+                            <p class="address-text">
+                                <!-- 디자인 통일을 위해 주소에도 하이라이트 클래스를 임의로 추가하여 보여줍니다 -->
+                                <span class="highlight">경남 거제시 거제중앙로 1938(고현동), [아이오션병원]</span>
+                            </p>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-title">
+                                <span class="info-icon"><img src="./images/sub/1/location_bus.svg" alt="bus"></span>
+                                <h3>버스 안내</h3>
+                            </div>
+                            <p>
+                                ‘중앙공영주차장’ 정류장 하차 후 도보 1분<br>
+                                스타벅스 거제 고현점 옆 건물입니다.
+                            </p>
+                        </div>
+
+                        <div class="info-item parking-item">
+                            <div class="info-title">
+                                <span class="info-icon"><img src="./images/sub/1/location_car.svg" alt="car"></span>
+                                <h3>주차 안내</h3>
+                            </div>
+                            <p>
+                                <span class="highlight">
+                                    건물 지하 1~2층 주차장 이용 가능합니다.
+                                </span><br>
+                                * 내원 고객님들은 차량번호 등록 시 무료 주차 가능<br>
+                                * 주차장과 엘리베이터가 바로 연결되어 있어 유모차 이동 편리
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽 캐릭터 -->
+                    <img src="./images/sub/1/location_Y.svg" alt="아이오션병원 캐릭터" class="character pair-character">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 의료진 소개 -->
+        <section class="doctor-section" id="doctor-section">
+
+            <h2 class="doctor-title">의료진 소개</h2>
+
+            <!-- 1. 김하린 (왼쪽 사진 - 파란색 테마) -->
+            <!-- 구조: 사진(왼쪽) - 정보(가운데) - 배경사진(오른쪽) -->
+            <div class="doctor-profile type-blue blue-bg1">
+                <div class="doctor-inner" id="kim-doc">
+                    <div class="doctor-photo">
+                        <img src="./images/sub/1/doc1.png" alt="김하린 원장">
+                    </div>
+
+                    <div class="doctor-info">
+                        <p class="doctor-message-1">
+                            “아이의 튼튼한 일상과 바른 성장을 꼼꼼히 살피겠습니다.”
+                        </p>
+                        <div class="doctor-name">
+                            <strong>김하린</strong>
+                            <span></span>
+                            <em>아이오션병원 원장 · 소아청소년과 전문의</em>
+                        </div>
+                        <div class="doctor-block">
+                            <h3>전문분야</h3>
+                            <div class="tag-list">
+                                <span>#일반 진료</span>
+                                <span>#예방 접종</span>
+                                <span>#성장 클리닉</span>
+                            </div>
+                        </div>
+                        <div class="doctor-career">
+                            <div>
+                                <h3>약력</h3>
+                                <p>한국대학교 의과대학 졸업</p>
+                                <p>한국대학교 의과대학원 석사</p>
+                                <p>한국대학교병원 소아청소년과 전공</p>
+                                <p>한국대학교병원 인턴 수료</p>
+                                <p>한국대학교병원 소아청소년과 전공의 수료</p>
+                                <p>한국대학교병원 소아청소년과 임상강사</p>
+                                <p>한국대학교병원 소아청소년과 진료교수</p>
+                                <p>현) 아이오션병원 소아청소년과 원장</p>
+                            </div>
+                            <div>
+                                <h3>학회</h3>
+                                <p>대한소아청소년과학회 정회원</p>
+                                <p>대한소아내분비학회 정회원</p>
+                                <p>대한소아알레르기호흡기학회 정회원</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-bg">
+                        <!-- <img src="./images/sub/1/bg_doc1.png" alt="김하린 진료 모습"> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 정유진 (오른쪽 사진 - 노란색 테마) -->
+            <!-- 구조: 배경사진(왼쪽) - 정보(가운데) - 사진(오른쪽) -->
+            <div class="doctor-profile type-yellow yellow-bg1">
+                <div class="doctor-inner" id="jeong-doc">
+
+                    <div class="doctor-info">
+                        <p class="doctor-message-2">
+                            “성장의 시작점부터 아이의 건강한 변화를 세심하게 지켜보겠습니다.”
+                        </p>
+                        <div class="doctor-name">
+                            <strong>정유진</strong>
+                            <span></span>
+                            <em>아이오션병원 원장 · 소아청소년과 전문의</em>
+                        </div>
+                        <!-- 진료과목 3개 / 2개 분리 -->
+                        <div class="doctor-block-2">
+                            <h3>전문분야</h3>
+                            <div class="tag-list" style="margin-bottom: 10px;">
+                                <span>#일반 진료</span>
+                                <span>#건강 검진</span>
+                                <span>#예방 접종</span>
+                            </div>
+                            <div class="tag-list">
+                                <span>#성장 클리닉</span>
+                                <span>#성장기 건강 관리</span>
+                            </div>
+                        </div>
+                        <div class="doctor-career-2">
+                            <div>
+                                <h3>약력</h3>
+                                <p>대한대학교 의과대학 졸업</p>
+                                <p>대한대학교 의과대학원 석사</p>
+                                <p>한국대학교병원 소아청소년과 전공</p>
+                                <p>한국대학교병원 인턴 수료</p>
+                                <p>한국대학교병원 소아청소년과 전공의 수료</p>
+                                <p>한국대학교병원 소아청소년과 임상강사</p>
+                                <p>한국대학교병원 소아청소년과 진료교수</p>
+                                <p>현) 아이오션병원 소아청소년과 원장</p>
+                            </div>
+                            <div>
+                                <h3>학회</h3>
+                                <p>대한소아청소년과학회 정회원</p>
+                                <p>대한소아소화기영양학회 정회원</p>
+                                <p>대한소아내분비학회 정회원</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-photo">
+                        <img src="./images/sub/1/doc2.png" alt="정유진 원장">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 박서준 (왼쪽 사진 - 파란색 테마) -->
+            <div class="doctor-profile type-blue blue-bg2">
+                <div class="doctor-inner" id="park-doc">
+                    <div class="doctor-photo">
+                        <img src="./images/sub/1/doc3.png" alt="박서준 원장">
+                    </div>
+
+                    <div class="doctor-info">
+                        <p class="doctor-message-1">
+                            “우리 아이 평생 구강 건강을 위한 튼튼한 기초를 다져주겠습니다.”
+                        </p>
+                        <div class="doctor-name">
+                            <strong>박서준</strong>
+                            <span></span>
+                            <em>아이오션병원 원장 · 소아치과 전문의</em>
+                        </div>
+                        <div class="doctor-block">
+                            <h3>전문분야</h3>
+                            <div class="tag-list">
+                                <span>#구강 검진</span>
+                                <span>#충치 치료</span>
+                                <span>#예방 치료</span>
+                                <span>#교정 치료</span>
+                                <span>#불소 도포</span>
+                                <span>#치아 외상</span>
+                                <span>#구강 습관·위생 관리</span>
+                            </div>
+                        </div>
+                        <div class="doctor-career">
+                            <div>
+                                <h3>약력</h3>
+                                <p>대한대학교 치과대학 졸업</p>
+                                <p>대한대학교 치의학대학원 석사</p>
+                                <p>대한대학교 치과병원 소아치과 전공</p>
+                                <p>대한대학교 치과병원 인턴 수료</p>
+                                <p>대한대학교 치과병원 소아치과 레지던트 수료</p>
+                                <p>한국대학교 치과병원 소아치과 임상진료</p>
+                                <p>한국대학교 치과병원 소아치과 외래교수</p>
+                                <p>현) 아이오션병원 소아치과 원장</p>
+                            </div>
+                            <div>
+                                <h3>학회</h3>
+                                <p>대한소아치과학회 정회원</p>
+                                <p>대한치과의사협회 정회원</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-bg">
+                        <!-- <img src="./images/sub/1/bg_doc3.png" alt="박서준 진료 모습"> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. 이준호 (오른쪽 사진 - 노란색 테마) -->
+            <div class="doctor-profile type-yellow yellow-bg2">
+                <div class="doctor-inner" id="lee-doc">
+
+                    <!-- 정보 (왼쪽) -->
+                    <div class="doctor-info">
+                        <p class="doctor-message-2">
+                            “아이의 마음과 발달을 함께 바라보겠습니다.”
+                        </p>
+                        <div class="doctor-name">
+                            <strong>이준호</strong>
+                            <span></span>
+                            <em>아이오션병원 원장 · 소아청소년정신과 전문의</em>
+                        </div>
+
+                        <!-- 진료과목 2개 / 2개 분리 -->
+                        <div class="doctor-block-2">
+                            <h3>전문분야</h3>
+                            <div class="tag-list" style="margin-bottom: 10px;">
+                                <span>#ADHD 진단·상담</span>
+                                <span>#행동·학습 상담</span>
+                            </div>
+                            <div class="tag-list">
+                                <span>#정서·심리상담</span>
+                                <span>#발달 지연·평가</span>
+                            </div>
+                        </div>
+                        <div class="doctor-career-2">
+                            <div>
+                                <h3>약력</h3>
+                                <p>대한대학교 의과대학 졸업</p>
+                                <p>대한대학교 의과대학원 석사</p>
+                                <p>한국대학교병원 소아청소년과 전공</p>
+                                <p>한국대학교병원 인턴 수료</p>
+                                <p>한국대학교병원 소아청소년과 전공의 수료</p>
+                                <p>한국대학교병원 소아청소년과 임상강사</p>
+                                <p>한국대학교병원 소아청소년 행동발달센터 임상진료</p>
+                                <p>한국대학교병원 소아청소년과 진료교수</p>
+                                <p>현) 아이오션병원 소아청소년정신과 원장</p>
+                            </div>
+                            <div>
+                                <h3>학회</h3>
+                                <p>한국자폐학회 정회원</p>
+                                <p>대한소아청소년과학회 정회원</p>
+                                <p>대한소아청소년정신의학회 정회원</p>
+                                <p>대한소아청소년행동발달증진학회 정회원</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-photo">
+                        <img src="./images/sub/1/doc4.png" alt="이준호 원장">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 캐릭터 소개 섹션 -->
+        <section class="character-section" id="character-section">
+            <div class="character-inner">
+
+                <!-- 캐릭터 소개 상단 텍스트 -->
+                <div class="char-header">
+                    <span class="small-title">캐릭터 소개</span>
+                    <h2>아이들의 건강한 성장을 함께하는<br>
+                        <strong class="color-blue">괭이</strong>와 <strong class="color-yellow">유찌</strong>를 소개합니다.
+                    </h2>
+                    <p>
+                        아이오션병원에는 아이들이 병원을 조금 더 편안하고 친근하게 느낄 수 있도록 함께 하는 두 친구가 있습니다.<br><br>
+                        아이들을 따뜻하게 돌보는 상괭이 의사 <em>'괭이'</em>
+                        와<br>
+                        아이들의 모습을 담은 유자 아이 <em>'유찌'</em>입니다.<br><br>
+                        서로 다른 곳에서 왔지만, 아이들을 생각하는 따뜻한 마음은 꼭 닮아있습니다.
+                    </p>
+                </div>
+
+                <!-- 1. 괭이 (상괭이 의사 - 왼쪽 영상) -->
+                <div class="char-block type-gwaengi char-animate">
+                    <!-- 왼쪽: 메인 영상 (아치형) -->
+                    <div class="char-video-box line-blue">
+                        <!-- autoplay, loop, muted 속성으로 배경 영상처럼 무한 자동 재생됩니다 -->
+                        <video src="./images/sub/1/G.mp4" autoplay loop muted playsinline></video>
+                    </div>
+
+                    <!-- 오른쪽: 인용구 및 작은 캐릭터 모음 -->
+                    <div class="char-details">
+                        <div class="char-quote quote-blue">
+                            <p> <img class="quote-img left" src="./images/sub/1/mark_yell_left.svg" alt="mark">아이들의 건강을
+                                꼼꼼하게 지켜주는<br>다정한 <strong>괭이</strong> 선생님이에요! <img class="quote-img right"
+                                    src="./images/sub/1/mark_yell_right.svg" alt="mark"></p>
+                        </div>
+                        <div class="char-grid">
+                            <!-- 작은 포즈 이미지들 (경로를 수정해주세요) -->
+                            <img src="./images/sub/1/char_G1.svg" alt="괭이1">
+                            <img src="./images/sub/1/char_G2.svg" alt="괭이2">
+                            <img src="./images/sub/1/char_G3.svg" alt="괭이3">
+                            <img src="./images/sub/1/char_G4.svg" alt="괭이4">
+                            <img src="./images/sub/1/char_G5.svg" alt="괭이5">
+                            <img src="./images/sub/1/char_G6.svg" alt="괭이6">
+                            <img src="./images/sub/1/char_G7.svg" alt="괭이7">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 유찌 (유자 아이 - 오른쪽 영상) -->
+                <div class="char-block type-yuzzi char-animate">
+                    <!-- 왼쪽: 인용구 및 작은 캐릭터 모음 -->
+                    <div class="char-details">
+                        <div class="char-quote quote-yellow">
+                            <p><img class="quote-img left" src="./images/sub/1/mark_blue_left.svg" alt="">씩씩하게 병원에
+                                온<br>용감한 아이오션의 <strong>유찌</strong>예요!<img class="quote-img right"
+                                    src="./images/sub/1/mark_blue_right.svg" alt=""></p>
+                        </div>
+                        <div class="char-grid">
+                            <!-- 작은 포즈 이미지들 (경로를 수정해주세요) -->
+                            <img src="./images/sub/1/char_Y1.svg" alt="유찌 포즈1">
+                            <img src="./images/sub/1/char_Y2.svg" alt="유찌 포즈2">
+                            <img src="./images/sub/1/char_Y3.svg" alt="유찌 포즈3">
+                            <img src="./images/sub/1/char_Y4.svg" alt="유찌 포즈4">
+                            <img src="./images/sub/1/char_Y5.svg" alt="유찌 포즈5">
+                            <img src="./images/sub/1/char_Y6.svg" alt="유찌 포즈6">
+                            <img src="./images/sub/1/char_Y7.svg" alt="유찌 포즈7">
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 메인 영상 (아치형) -->
+                    <div class="char-video-box line-yellow">
+                        <video src="./images/sub/1/Y.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- footer st -->
+        <footer class="footer">
+            <div class="footer-inner">
+
+
+                <!-- 상단 로고 (단독 행) -->
+                <div class="footer-top">
+                    <h2 class="footer-logo">
+                        <img src="./images/layout/footer_logo.svg" alt="아이오션병원 로고">
+                    </h2>
+                </div>
+
+                <!-- 하단 텍스트 영역 (동일한 선상 정렬) -->
+                <div class="footer-bottom">
+
+                    <!-- 병원 정보 -->
+                    <div class="footer-info footer-block">
+                        <div class="infomation-item">
+                            <p class="label">주소</p>
+                            <p class="value">경남 거제시 거제중앙로 1938</p>
+                        </div>
+                        <div class="infomation-item">
+                            <!-- <p class="label"><a href="#">이용약관</a></p> -->
+                            <p class="value">
+                                <a href="#">이용약관</a> <b>·</b>
+                                <a href="#">개인정보처리방침</a> <b>·</b> <a href="#">환자권리장전</a> <b>·</b> <a href="#">오시는 길</a>
+                            </p>
+                        </div>
+                        <p class="copyright">
+                            copyright © IOCEAN HOSPITAL. All rights reserved.
+                        </p>
+                    </div>
+
+                    <!-- 진료시간 -->
+                    <div class="footer-time footer-block">
+                        <p class="label">진료 시간</p>
+                        <div class="value">
+                            <div class="time-row">
+                                <span>평일</span>
+                                <span>09:00 - 18:00</span>
+                            </div>
+                            <div class="time-row">
+                                <span>주말 및 공휴일</span>
+                                <span>09:00 - 13:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 점심시간 및 야간진료 -->
+                    <div class="footer-lunch">
+                        <div class="lunch-row">
+                            <p class="label">점심시간</p>
+                            <p class="value">13:00 - 14:00</p>
+                        </div>
+                        <div class="lunch-row">
+                            <p class="label">평일 야간(수)</p>
+                            <p class="value">18:00 - 21:00</p>
+                        </div>
+                    </div>
+
+                    <!-- 대표번호 -->
+                    <div class="footer-contact footer-block">
+                        <p class="label">대표 번호</p>
+                        <div class="value">
+                            <a href="tel:055-123-4567" class="tel-link">055-123-4567</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- footer end-->
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/script1.js"></script>
+
+    <!-- AOS js 적용 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- ==========================================
+       플로팅 퀵 메뉴
+    ========================================== -->
+    <div class="floating-menu">
+
+        <!-- 숨겨진 퀵 아이콘 메뉴 (호버 시 등장) -->
+        <div class="quick-icons">
+            <a href="#none" title="캘린더"><img src="./images/button/calendar.svg" alt="캘린더"></a>
+            <a href="tel:055-123-4567" title="전화"><img src="./images/button/call.svg" alt="전화"></a>
+            <a href="#none" title="상담"><img src="./images/button/message.svg" alt="상담"></a>
+        </div>
+
+        <!-- 캐릭터 영역 (기본/호버 이미지 2장 겹쳐두기) -->
+        <div class="quick-char">
+            <img src="./images/button/basic.svg" alt="기존" class="char-default">
+            <img src="./images/button/hover.svg" alt="호버" class="char-hover">
+        </div>
+
+        <!-- 탑 버튼 -->
+        <button type="button" class="btn-top" aria-label="상단으로 이동">
+            <span class="arrow"></span>
+        </button>
+
+    </div>
+    <!-- 플로팅 퀵 메뉴 끝 -->
+
+</body>
+
+</html>
