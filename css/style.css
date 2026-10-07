@@ -353,19 +353,18 @@ body {
 .medical-section {
     width: 100%;
     height: 800px;
-
     background: #FFFFF4;
 
     overflow: hidden;
-
     letter-spacing: 1.5px;
+
+    scroll-margin-top: 100px;
 }
 
 
 /* =====================================================
    섹션 제목
 ===================================================== */
-
 .medical-title {
     text-align: center;
 
@@ -1237,6 +1236,11 @@ body {
     left: 150px;
     bottom: 20px;
     z-index: 2;
+
+    /* 모션 추가: 4초 주기로 위아래 통통 뛰며 살짝 흔들림 */
+    animation: yoozaBounce 4s ease-in-out infinite;
+    transform-origin: center bottom;
+    /* 발/엉덩이 기준으로 자연스럽게 */
 }
 
 /* 재생 버튼 */
@@ -1314,7 +1318,67 @@ body {
     width: 180px;
     /* 캐릭터 크기 (적절한 사이즈로 조절하세요) */
     height: auto;
+
+    /* 모션 추가: 3초 주기로 부드럽게 둥실둥실 떠오름 */
+    animation: dolphinFloat 3s ease-in-out infinite;
+    transform-origin: center center;
 }
+
+
+
+/* (마우스 호버 시 살짝 반응하는 인터랙션 옵션 - 원치 않으시면 생략 가능) */
+.tv-character:hover {
+    animation-duration: 1.2s;
+    /* 호버 시 조금 더 신나게 뜀 */
+}
+
+.card-character:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+/* =======================================
+   애니메이션 Keyframes
+======================================= */
+
+/* 유자 통통 튀는 애니메이션 */
+@keyframes yoozaBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-12px) rotate(-3deg);
+        /* 살짝 위로 뛰며 왼쪽 기울임 */
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-8px) rotate(3deg);
+        /* 가볍게 뛰며 오른쪽 기울임 */
+    }
+}
+
+/* 상괭이 둥실둥실 부유 애니메이션 */
+@keyframes dolphinFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(2deg);
+        /* 부드럽게 위로 뜨며 살짝 갸웃 */
+    }
+}
+
 
 /* ===============
 둘러보기
@@ -1660,11 +1724,15 @@ body {
     font-weight: 500;
     color: rgba(51, 51, 51, 0.5);
     width: 100%;
+
+
     background: url(../images/layout/m_footer_bg.svg) no-repeat center top / cover;
     z-index: 99;
 }
 
 .footer-inner {
+    position: relative;
+    /* 캐릭터 배치의 기준점 */
     width: 1300px;
     margin: -130px auto;
     /* 기존 여백 설정 유지 */
@@ -1674,6 +1742,73 @@ body {
     flex-direction: column;
     /* 로고 영역과 텍스트 영역을 위아래로 분리 */
 }
+
+/* 🎈 풍선 든 유자 캐릭터 */
+.footer-yooza {
+    position: absolute;
+    top: 14px;
+    /* 파도 곡선 상단 높이에 맞게 조절 */
+    left: 70%;
+    /* 이미지 시안 기준 위치 (점심시간/진료시간 위쪽 부근) */
+    transform: translateX(-50%);
+    width: 130px;
+    /* 적정 크기 지정 */
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+
+    /* 둥둥 떠다니는 애니메이션 (위아래 + 살짝 흔들림) */
+    animation: balloonFloat 3.8s ease-in-out infinite;
+    transform-origin: center top;
+    /* 풍선 상단을 축으로 흔들림 */
+}
+
+.footer-yooza img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* 마우스 올렸을 때 살짝 통통 튀는 인터랙션 */
+.footer-yooza:hover {
+    animation: balloonHover 0.8s ease-in-out infinite alternate;
+}
+
+/* 🎈 둥실둥실 모션 Keyframes */
+@keyframes balloonFloat {
+    0% {
+        transform: translate(-50%, 0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-50%, -14px) rotate(2deg);
+    }
+
+    50% {
+        transform: translate(-50%, -24px) rotate(-1.5deg);
+    }
+
+    75% {
+        transform: translate(-50%, -10px) rotate(1.5deg);
+    }
+
+    100% {
+        transform: translate(-50%, 0px) rotate(0deg);
+    }
+}
+
+/* 마우스 올렸을 때 신나서 흔들리는 모션 */
+@keyframes balloonHover {
+    0% {
+        transform: translate(-50%, -20px) scale(1) rotate(-3deg);
+    }
+
+    100% {
+        transform: translate(-50%, -32px) scale(1.05) rotate(3deg);
+    }
+}
+
 
 /* ========================================
    상단: 로고 영역
@@ -1772,25 +1907,31 @@ body {
 }
 
 /* ========================================
-   점심시간
+   점심시간 및 야간진료
 ======================================== */
 .footer-lunch {
     width: 280px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    /* 위 점심시간과 아래 안내문구 사이의 간격 */
+    gap: 8px; /* 진료시간 줄 간격과 동일하게 세팅 */
 }
 
 .lunch-row {
     display: flex;
+    gap: 20px; /* 시간과 라벨 사이 간격 */
     align-items: flex-start;
+}
+
+/* '평일 야간(수)' 글자가 깨지지 않도록 너비를 진료시간 영역(100px)과 동일하게 맞춤 */
+.footer-lunch .lunch-row .label {
+    width: 100px;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.8);
 }
 
 .footer-lunch p {
     margin: 0;
 }
-
 
 /* ========================================
    대표번호
@@ -1857,11 +1998,13 @@ body {
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     margin-bottom: 5px;
 }
+
 .quick-icons a {
     display: block;
     width: 60px;
     height: 60px;
 }
+
 .quick-icons img {
     width: 60px;
     height: 60px;
@@ -1881,7 +2024,7 @@ body {
     border-radius: 20px;
     background-color: rgba(245, 247, 250, 0.6);
     /* 기본 파란색 그림자 */
-    box-shadow: 0 0 25px rgba(175, 207, 221, 0.8);
+    box-shadow: 0 0 25px rgba(74, 155, 184, 0.4);
     transition: all 0.3s ease;
     cursor: pointer;
     overflow: hidden;
@@ -1915,7 +2058,7 @@ body {
 
 .floating-menu:hover .quick-char {
     /* 호버 시 노란색 그림자로 변경 */
-    box-shadow: 0 0 25px rgba(246, 201, 69, 0.9);
+    box-shadow: 0 0 25px rgba(246, 202, 70, 0.4);
 }
 
 /* 캐릭터 교체 애니메이션 */
@@ -1937,12 +2080,15 @@ body {
     height: 70px;
     border-radius: 50%;
     border: 3px solid #AFCFDD;
-    background-color: #fff;
+    background-color: rgba(249, 250, 252, 0.3);
+    backdrop-filter: blur(10px);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+
+    background: url(../images/button/arrow.svg) no-repeat center center;
 }
 
 .btn-top:hover {
@@ -1950,21 +2096,6 @@ body {
     transform: translateY(-2px);
     /* 누르기 좋게 위로 살짝 들림 */
 }
-
-/* CSS로 화살표 그리기 (이미지 불필요) */
-.btn-top .arrow {
-    display: inline-block;
-    background: url(../images/button/arrow.svg) no-repeat center center;
-    
-    width: 80px;
-    height: 80px;
-}
-
-
-
-
-
-
 
 
 
