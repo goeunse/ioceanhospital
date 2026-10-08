@@ -908,9 +908,6 @@ body {
 
 
 /* 👌👌👌👌 의료진 소개!!!! */
-/* =========================
-   의료진 안내
-========================= */
 
 .doctor-section {
     width: 1300px;
@@ -1726,7 +1723,7 @@ body {
     width: 100%;
 
 
-    background: url(../images/layout/m_footer_bg.svg) no-repeat center top / cover;
+    background: url(../images/layout/m_footer_bg.svg) no-repeat center top / cover ;
     z-index: 99;
 }
 
@@ -1751,7 +1748,7 @@ body {
     left: 70%;
     /* 이미지 시안 기준 위치 (점심시간/진료시간 위쪽 부근) */
     transform: translateX(-50%);
-    width: 130px;
+    width: 150px;
     /* 적정 크기 지정 */
     z-index: 10;
     pointer-events: auto;
