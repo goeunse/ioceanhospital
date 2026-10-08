@@ -295,27 +295,20 @@ $(function () {
 
 
 
-
 // 의료진 소개
 $(function () {
-
     $(".doctor-more").click(function () {
-
         var url = $(this).data("url");
-
-        window.open(url, "_blank");
-
+        
+        window.location.href = url;
     });
-
 });
 
 $(function () {
-
     var swiper = new Swiper('.card', {
         effect: 'cards',
         grabCursor: true,
     });
-
 });
 
 
