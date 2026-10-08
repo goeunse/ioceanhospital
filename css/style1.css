@@ -1,0 +1,1818 @@
+@charset "utf-8";
+
+/* webfont */
+/* 웹폰트없으면 지우세요!!! */
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+}
+
+body {
+    font-family: 'Pretendard';
+    font-family: 'SUITE', sans-serif;
+    /* font-size: ; */
+    line-height: 1.5;
+    color: #333;
+    background-color: #F5F7FA;
+}
+
+#wrap {
+    min-width: 1360px;
+}
+
+
+
+
+/* ❤️❤️❤️ header */
+#header {
+    background-color: #F5F7FA;
+
+    border-bottom: 1px solid #AFCFDD;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.inner_header {
+    width: 1300px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.gnb {
+    display: flex;
+    gap: 20px;
+}
+
+.gnb>li {
+    position: relative;
+}
+
+/* 버튼과 서브메뉴 사이 연결 / 테두리가 있으니 가상선택자로 */
+.gnb>li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 30px;
+    /* 빈 공간만큼 */
+    cursor: pointer;
+}
+
+.gnb>li>a {
+    display: block;
+    padding: 10px 28px;
+    border: 2px solid #AFCFDD;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.gnb>li>a:hover {
+    background-color: #4A9BB8;
+    border: 2px solid #4A9BB8;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(74, 155, 184, 0.3)
+}
+
+.submenu {
+    /* display: flex;
+    flex-direction: column;
+ */
+
+    position: absolute;
+    top: 81px;
+    left: 0;
+    margin-top: 0;
+
+    background-color: #F5F7FA;
+    padding: 10px 22px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px rgba(74, 155, 184, 0.3);
+    z-index: 100;
+
+    display: none;
+
+    /* 숨김 처리 */
+    /* opacity: 0;
+    visibility: hidden;
+
+    transition: opactiy 0.3s ease-in-out, visibility 0.3s ease-in-out; */
+    /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
+}
+
+.gnb>li:hover .submenu {
+    /* display: flex;
+    flex-direction: column; */
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.inner_submenu li a {
+    font-weight: 700;
+    display: block;
+    padding: 8px 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.inner_submenu li a:hover {
+    color: #4a9bb8;
+
+}
+
+
+
+
+
+
+
+/* 배너 */
+.hero-section {
+    width: 100%;
+    height: 500px;
+    /* 요청하신 높이 */
+    margin: 100px auto;
+    /* 가운데 정렬 */
+    background-image: url(../images/sub/1/baaner.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    /* 내부 콘텐츠 배치를 위한 플렉스박스 */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    /* 왼쪽 여백을 주어 사진 속 위치와 비슷하게 맞춥니다. */
+    padding-left: 15%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-title {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 100px;
+    text-shadow: 0 2px 4px rgba(51, 51, 51, 0.2);
+    /* 글씨가 잘 보이도록 약간의 그림자 추가 */
+}
+
+.hero-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* 가로로 나열 */
+    gap: 20px;
+    /* 버튼 사이 간격 */
+}
+
+.hero-menu>li>a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    /* 기본 투명 배경 */
+    border: 2px solid #f6c945;
+    /* 노란색 테두리 */
+    color: #ffffff;
+    /* 흰색 글씨 */
+    border-radius: 30px;
+    /* 둥근 알약 모양 */
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    /* 밑줄 제거 */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* 부드러운 전환 효과 */
+}
+
+/* 보여주신 .gnb>li>a:hover 스타일 작성 방식과 동일합니다. */
+.hero-menu>li>a:hover,
+.hero-menu>li>a.active {
+    background-color: #f6c945;
+    /* 노란색 배경 */
+    border: 2px solid #f6c945;
+    color: #333333;
+    /* 검정/진회색 글씨 */
+}
+
+
+
+
+/* =========================
+   인사말
+========================= */
+#hospintro {
+    scroll-margin-top: 200px;
+}
+
+.hospintro {
+    width: 100%;
+}
+
+.hospintro-inner {
+    width: 1300px;
+    height: 700px;
+    margin: 0 auto 100px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* 왼쪽 텍스트 */
+
+.greeting-text {
+    width: 540px;
+    position: relative;
+    z-index: 2;
+}
+
+.greeting-text h2 {
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+}
+
+.greeting-text h3 {
+    margin-bottom: 50px;
+
+    font-size: 40px;
+    font-weight: 700;
+
+    color: #4A9BB8;
+}
+
+.greeting-desc {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 400;
+    /* line-height: 1.8; */
+    color: #333;
+}
+
+.greeting-desc p {
+    margin-bottom: 18px;
+    /* margin: 0 0 20px; */
+}
+
+.greeting-desc p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 대표원장 서명 */
+
+.hospital-ceo {
+    margin-top: 30px;
+
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+
+    text-align: right;
+    padding-right: 10px;
+}
+
+
+/* 오른쪽 이미지 영역 */
+
+.greeting-image {
+    width: 700px;
+    height: 600px;
+
+    border-radius: 20px;
+
+    margin-left: 100px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* 이미지 뒤쪽의 은은한 배경 */
+
+.greeting-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 600px;
+
+    right: 0;
+    top: 0;
+
+    background: rgba(246, 202, 70, 0.1);
+
+    border-radius: 20px;
+}
+
+
+/* 의료진 이미지 */
+
+.greeting-image img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+
+
+/* =====================================================
+   네가지 약속 섹션 (배경 및 구조)
+===================================================== */
+.promise-section {
+    position: relative;
+    width: 100%;
+
+    /* overflow: hidden;  */
+    /* 영역 밖으로 나가는 구름, 별 자르기 */
+}
+
+.promise-inner {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.promise-title {
+    font-size: 30px;
+    font-weight: 6 00;
+    color: #4A3A3A;
+    margin-bottom: 50px;
+}
+
+/* =====================================================
+   타임라인 레이아웃
+===================================================== */
+.promise-list-wrap {
+    position: relative;
+    padding-left: 20px;
+    /* 전체 리스트 왼쪽 여백 */
+}
+
+/* 세로 노란 선 */
+.promise-line {
+    position: absolute;
+    top: 0;
+    bottom: 30px;
+    /* 선의 시작과 끝 높이 조절 */
+    left: 104px;
+    /* 번호 동그라미 다음 위치 */
+    height: 1052px;
+
+    width: 5px;
+    background-color: #F6CA46;
+    border-radius: 5px;
+}
+
+.promise-item {
+    display: flex;
+    align-items: flex-start;
+    /* margin-bottom: 75px; */
+    /* 각 항목 간의 간격 */
+    position: relative;
+}
+
+.promise-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 번호 배지 (1, 2, 3, 4) */
+.promise-item .num {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #92AAB6;
+    border-radius: 50%;
+    background-color: #EBF0F3;
+    color: #5B7B8C;
+    font-size: 22px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: 96px;
+    left: -20px;
+}
+
+/* 노란색 점 */
+.promise-item .dot {
+    position: absolute;
+    top: 114px;
+    left: 77px;
+    /* 세로 선 위에 정확히 겹치도록 설정 */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #F6CA46;
+}
+
+/* 텍스트 영역 */
+.promise-item .text {
+    margin-left: 100px;
+    /* 노란 점에서 텍스트까지의 거리 */
+    /* padding-top: 5px; */
+}
+
+.promise-item .text h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin: 100px 0 30px 100px;
+    /* margin-top: 90px; */
+}
+
+.promise-item .text h3 span {
+    color: #F6CA46;
+    /* 오렌지/노란색 강조 텍스트 */
+}
+
+.promise-item .text p {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    color: #333;
+    margin-left: 100px;
+}
+
+/* =====================================================
+   달, 별, 구름 배치 및 애니메이션
+===================================================== */
+.floating-obj {
+    position: absolute;
+    z-index: 5;
+}
+
+/* 달 (오른쪽 위) */
+.obj-moon {
+    bottom: -800px;
+    right: 15%;
+    width: 100px;
+    animation: floatMoon 4s ease-in-out infinite;
+}
+
+/* 파란 별 (오른쪽 중간) */
+.obj-star-blue {
+    bottom: -1150px;
+    right: 10%;
+    width: 80px;
+    animation: floatStarBlue 5s ease-in-out infinite;
+}
+
+/* 노란 별 (가운데 아래쪽) */
+.obj-star-yellow {
+    bottom: -1500px;
+    right: 25%;
+    width: 70px;
+    animation: floatStarYellow 4.5s ease-in-out infinite;
+}
+
+/* 구름 고정 (좌측 하단, 우측 하단) */
+.cloud-bottom {
+    position: absolute;
+    /* 약간 잘리게 배치 */
+    z-index: 4;
+    /* animation: floatStarYellow 4.5s ease-in-out infinite; */
+}
+
+.cloud-left {
+    bottom: -1900px;
+    left: 253px;
+    width: 250px;
+    animation: floatStarYellow 4.5s ease-in-out infinite;
+}
+
+.cloud-right {
+    right: 20%;
+    width: 200px;
+    bottom: -1950px;
+    animation: floatStarBlue 5s ease-in-out infinite;
+}
+
+
+/* 둥둥 떠다니는 키프레임 애니메이션 */
+@keyframes floatMoon {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes floatStarBlue {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+@keyframes floatStarYellow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    /* 아래로 살짝 내려감 */
+}
+
+
+
+
+/* ========================================
+   둘러보기 (TOUR SECTION)
+======================================== */
+#tour-section {
+    scroll-margin-top: 200px;
+}
+
+.tour-section {
+    width: 100%;
+    margin-top: 270px;
+    margin-bottom: 120px;
+}
+
+/* 타이틀 */
+.tour-title {
+    width: 1300px;
+    margin: 0 auto 30px;
+    text-align: left;
+}
+
+.tour-title h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 메인 컨테이너 (1300px 규격) */
+.tour-container {
+    width: 1300px;
+    margin: 0 auto;
+    height: 600px;
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* --- 좌측 사진 영역 --- */
+.tour-image-wrap {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    background-color: #f7f9fa;
+    overflow: hidden;
+}
+
+.tour-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    transform: scale(1.03);
+    /* 전환 시 자연스럽게 살짝 줌아웃 */
+}
+
+.tour-panel.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 1;
+}
+
+.tour-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- 우측 탭 메뉴 목록 --- */
+.tour-tab-list {
+    width: 317px;
+    height: 100%;
+    background-color: rgba(246, 202, 70, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 탭 아이템 기본 */
+.tour-tab-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(246, 201, 69, 0.4);
+    transition: all 0.25s ease;
+    outline: none;
+    position: relative;
+    user-select: none;
+}
+
+.tour-tab-item:last-child {
+    border-bottom: none;
+}
+
+/* 탭 내부 텍스트 기본 */
+.tour-tab-item .floor {
+    width: 90px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.25s ease;
+}
+
+.tour-tab-item .desc {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.25s ease;
+}
+
+/* --- 호버 & 활성화 (클릭 및 키보드 포커스) 상태 --- */
+/* 글자 커짐 + 흰색 글씨 + 노란색 배경 */
+.tour-tab-item:hover,
+.tour-tab-item.is-active,
+.tour-tab-item:focus-visible {
+    background-color: #F6CA46;
+}
+
+.tour-tab-item:hover .floor,
+.tour-tab-item.is-active .floor,
+.tour-tab-item:focus-visible .floor {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    transform: scale(1.05);
+}
+
+.tour-tab-item:hover .desc,
+.tour-tab-item.is-active .desc,
+.tour-tab-item:focus-visible .desc {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    transform: scale(1.06);
+}
+
+
+/* 오시는 길 */
+
+.location-section {
+    background: url(../images/sub/1/bg_location.svg) no-repeat center top;
+    width: 100%;
+    padding-bottom: 115px;
+    /* padding: 30px 0 100px 0; */
+}
+
+.location-inner {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 100px;
+    /* color: var(--text-dark); */
+}
+
+/* Flexbox 레이아웃: 데스크톱에서는 양옆, 모바일에서는 위아래 */
+.location-content {
+    display: flex;
+    flex-direction: column;
+    /* gap: 40px; */
+    position: relative;
+    /* 오른쪽 캐릭터 기준점 */
+}
+
+@media (min-width: 900px) {
+    .location-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+.map-area,
+.info-card {
+    flex: 1;
+    /* border: 4px solid var(--brand-yellow-border); */
+    /* border-radius: 20px; */
+    /* background-color: #fff; */
+    position: relative;
+    /* 캐릭터가 박스 밖으로 튀어나올 수 있도록 오버플로우 visible 처리 */
+    overflow: visible;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.map-area {
+    min-height: 350px;
+    display: flex;
+}
+
+.map-image {
+    width: 718px;
+    height: 500px;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 5px solid #F6CA46;
+    border-radius: 30px;
+
+    padding: 33px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    /* color: var(--brand-blue); */
+}
+
+.info-title h3 {
+    font-size: 18px;
+    font-weight: bold;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4A9BB8;
+}
+
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    /* background-color: #f0f7f9; */
+    border-radius: 50%;
+    font-size: 20px;
+    /* 텍스트 이모지 사용 시 크기 */
+}
+
+.info-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.info-item p {
+    font-size: 18px;
+    color: #333;
+    padding-left: 48px;
+    font-weight: 500;
+    /* 아이콘 넓이(36) + 간격(12) 만큼 들여쓰기 */
+    line-height: 1.7;
+}
+
+.highlight {
+    /* 텍스트 하단에 두꺼운 노란색 밑줄이 그어진 듯한 효과 */
+    background: linear-gradient(to top, rgba(246, 201, 69, 0.45) 40%, transparent 50%);
+    font-weight: 500;
+    padding: 0 2px;
+}
+
+.character {
+    position: absolute;
+    z-index: 10;
+    filter: brightness(1.1)
+            drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+
+    animation: floating 3.5s ease-in-out infinite;
+}
+
+.doctor-character {
+    bottom: -23px;
+    right: -5px;
+    width: 204px;
+    height: 220px;
+}
+
+
+.pair-character {
+    bottom: -77px;
+    right: -138px;
+    width: 227px;
+    height: 227px;
+    animation-delay: 1.5s;
+    /* 왼쪽 캐릭터와 엇박자로 움직이도록 딜레이 추가 */
+
+}
+
+
+@media (max-width: 899px) {
+    .pair-character {
+        bottom: -30px;
+        right: 10px;
+        width: 120px;
+    }
+
+    .doctor-character {
+        width: 100px;
+        right: -10px;
+        bottom: -20px;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+/* ==============================
+    의료진 소개
+================================= */
+#doctor-section {
+    scroll-margin-top:200px;
+}
+
+.doctor-title {
+    width: 1300px;
+    margin: 100px auto;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* 프로필 공통 레이아웃 */
+.doctor-profile {
+    display: flex;
+}
+
+.doctor-inner {
+    width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+
+    margin-bottom: 100px;
+    gap: 60px;
+    /* opacity: 0; */
+    transform: translateY(45px);
+    transition: all 0.8s ease;
+
+}
+
+.doctor-profile.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 의사 프로필 사진 (아치형 배경) */
+.doctor-photo {
+    flex-shrink: 0;
+    width: 400px;
+    height: 500px;
+    border-radius: 200px 200px 30px 30px;
+    /* 아치형 */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.doctor-photo {
+    flex-shrink: 0;
+    width: 400px;
+    height: 500px;
+    border-radius: 200px 200px 30px 30px;
+    /* 아치형 */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.doctor-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+/* 왼쪽 배치 - 파란색 그라디언트 */
+.type-blue .doctor-photo {
+    background: linear-gradient(to bottom, rgba(74, 155, 184, 0), rgba(74, 155, 184, 0.5));
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.25)
+}
+
+/* 오른쪽 배치 - 노란색 그라디언트 */
+.type-yellow .doctor-photo {
+    background: linear-gradient(to bottom, rgba(255, 255, 244, 0.5), rgba(246, 202, 70, 0.5));
+
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.25)
+}
+
+/* 진료 배경 이미지 */
+.blue-bg1 {
+    height: 750px;
+    background: url(../images/sub/1/bg_doc1.png) no-repeat right center / auto 750px;
+}
+
+.blue-bg2 {
+    height: 750px;
+    background: url(../images/sub/1/bg_doc3.png) no-repeat right center / auto 750px;
+}
+
+
+#kim-doc,
+#jeong-doc,
+#park-doc,
+#lee-doc {
+    scroll-margin-top: 200px;
+}
+
+
+/* =========================================
+   노란색 테마 레이아웃 확실한 우측 정렬 
+========================================= */
+.type-yellow .doctor-inner {
+    justify-content: flex-end;
+    /* 전체 내용물을 오른쪽 끝으로 밀어줍니다 */
+}
+
+
+.yellow-bg1 {
+    height: 750px;
+    background: url(../images/sub/1/bg_doc2.png)no-repeat left center / auto 750px;
+}
+
+.yellow-bg2 {
+    height: 750px;
+    background: url(../images/sub/1/bg_doc4.png) no-repeat left center / auto 750px;
+}
+
+.type-yellow .doctor-info {
+    margin-left: auto;
+}
+
+/* 텍스트 정보 영역 */
+.doctor-info {
+    flex-grow: 1;
+    max-width: 660px;
+}
+
+.doctor-message-1 {
+    font-size: 24px;
+    font-weight: 600;
+
+    color: #4a9bb8;
+    margin-bottom: 30px;
+    /* word-break: keep-all; */
+}
+
+.doctor-message-2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #C49F31;
+    margin-bottom: 30px;
+    /* word-break: keep-all; */
+}
+
+/* 이름 및 직함 */
+.doctor-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.doctor-name strong {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+}
+
+.doctor-name span {
+    display: inline-block;
+    width: 3px;
+    height: 16px;
+    background-color: #333;
+    margin: 0 30px;
+}
+
+.doctor-name em {
+    font-size: 18px;
+    color: #333;
+    font-style: normal;
+    font-family: 'Pretendard';
+}
+
+/* 전문분야 태그 */
+.doctor-block {
+    margin-bottom: 24px;
+}
+
+.doctor-block h3,
+.doctor-career h3 {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    color: #4a9bb8;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-weight: normal;
+}
+
+.doctor-block-2 h3,
+.doctor-career-2 h3 {
+    color: #C49F31;
+    margin-bottom: 10px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 25px;
+}
+
+.tag-list span {
+    font-family: 'Pretendard';
+    padding: 10px 20px 9px 21px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* 태그 색상 테마 */
+.type-blue .tag-list span {
+    background-color: #4a9bb8;
+    /* 파란색 테마 */
+}
+
+.type-yellow .tag-list span {
+    background-color: #F6CA46;
+    /* 노란색 테마 */
+}
+
+
+/* 약력 및 학회 */
+.doctor-career,
+.doctor-career-2 {
+    display: flex;
+    gap: 25px;
+}
+
+.doctor-career>div,
+.doctor-career-2>div {
+    flex: 1;
+}
+
+.doctor-career p,
+.doctor-career-2 p {
+    font-family: 'Pretendard';
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+    /* line-height: 2; */
+    font-weight: 500;
+}
+
+
+
+
+
+
+/* ==============================
+    캐릭터 소개 섹션
+================================= */
+#character-section {
+    scroll-margin-top: 100px;
+}
+
+.character-section {
+    padding: 100px 0 50px 0;
+    background-image: url(../images/sub/1/bg_char.svg);
+    background-repeat: no-repeat;
+}
+
+.character-inner {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+/* 상단 헤더 텍스트 영역 */
+.char-header {
+    margin-bottom: 40px;
+    /* margin-bottom: 137px; */
+}
+
+.char-header .small-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.char-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    /* line-height: 1.4; */
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.char-header p {
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    line-height: 1.5;
+}
+
+.char-header p em {
+    font-style: normal;
+    font-size: 18px;
+}
+
+.color-blue {
+    color: #4a9bb8;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.color-yellow {
+    color: #f6c945;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* 캐릭터 블록 공통 레이아웃 */
+.char-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 150px;
+}
+
+/* 영상 박스 (아치형 프레임) */
+.char-video-box {
+    flex-shrink: 0;
+    width: 500px;
+    height: 600px;
+    border-radius: 300px 300px 30px 30px;
+    /* 아치형 테두리 */
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.char-video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 영상이 박스에 꽉 차게 */
+}
+
+/* 영상 테두리 색상 */
+.line-blue {
+    border: 5px solid #4a9bb8;
+}
+
+.line-yellow {
+    border: 5px solid #f6c945;
+}
+
+/* 캐릭터 상세 (텍스트 + 작은 이미지들) */
+.char-details {
+    flex-grow: 1;
+}
+
+/* 인용구 스타일 */
+.char-quote {
+    text-align: center;
+    margin-bottom: 107px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.char-quote strong {
+    font-weight: 700;
+    color: #4a9bb8;
+}
+
+.quote-yellow strong {
+    font-weight: 700;
+    color: #f6c945;
+}
+
+/* 인용구 p태그를 기준으로 이미지 위치를 잡기 위해 inline-block 적용 */
+.char-quote p {
+    position: relative;
+    display: inline-block;
+    /* 텍스트 너비에 맞게 박스 크기를 맞춤 */
+    margin: 0;
+}
+
+
+/* 따옴표 이미지 공통 스타일 */
+.char-quote .quote-img {
+    position: absolute;
+    top: -27px;
+    /* 텍스트 위쪽으로 살짝 올라오게 위치 조절 (필요시 수치 변경) */
+    width: 30px;
+    /* 따옴표 이미지 크기 조절 */
+    height: auto;
+}
+
+/* 왼쪽 따옴표 위치 */
+.char-quote .quote-img.left {
+    left: -45px;
+    /* 텍스트 왼쪽 바깥으로 배치 */
+}
+
+/* 오른쪽 따옴표 위치 */
+.char-quote .quote-img.right {
+    right: -45px;
+    /* 텍스트 오른쪽 바깥으로 배치 */
+
+    /* 💡 팁: 만약 오른쪽 따옴표 이미지가 왼쪽 따옴표와 똑같은 이미지라서 
+       모양을 좌우 반전(쌍따옴표 닫기 모양)해야 한다면 아래 주석을 해제하세요. */
+    /* transform: scaleX(-1); */
+}
+
+/* 작은 캐릭터 이미지 그리드 배치 */
+.char-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.char-grid img {
+    width: 150px;
+    /* 원하시는 작은 이미지 크기에 맞춰 조절하세요 */
+    height: auto;
+    object-fit: contain;
+}
+
+/* JS 애니메이션 시작 상태 */
+.char-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.char-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* ========================================
+ 💻💻💻💻  FOOTER TEXT
+======================================== */
+
+.footer {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 0.5);
+    width: 100%;
+
+
+    background-color: #AFCFDD;
+    z-index: 99;
+}
+
+.footer-inner {
+    position: relative;
+    /* 캐릭터 배치의 기준점 */
+    width: 1300px;
+    margin: 0 auto;
+    /* 기존 여백 설정 유지 */
+    padding: 90px 0 60px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* 로고 영역과 텍스트 영역을 위아래로 분리 */
+}
+
+
+
+/* ========================================
+   상단: 로고 영역
+======================================== */
+.footer-top {
+    margin-bottom: 25px;
+    /* 로고와 아래 텍스트 사이의 간격 */
+}
+
+.footer-logo {
+    margin: 0;
+}
+
+/* ========================================
+   하단: 텍스트 영역 공통
+======================================== */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* 핵심포인트: 모든 블록의 윗선을 똑같이 맞춤 */
+    width: 100%;
+}
+
+.footer-block {
+    display: flex;
+    align-items: flex-start;
+}
+
+.label {
+    width: 70px;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.5);
+    flex-shrink: 0;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 텍스트 줄 간격 */
+}
+
+/* ========================================
+   병원 정보 (주소, 이용약관)
+======================================== */
+.footer-info {
+    flex-direction: column;
+    width: 400px;
+    gap: 12px;
+}
+
+.infomation-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.infomation-item .value {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* font-weight: 500; */
+}
+
+.infomation-item b {
+    margin: 0 4px;
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.copyright {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+/* ========================================
+   진료시간
+======================================== */
+.footer-time {
+    width: 300px;
+}
+
+.time-row {
+    display: flex;
+    gap: 20px;
+}
+
+.time-row span,
+.footer-lunch .lunch-row .label,
+.footer-lunch .lunch-row .value,
+.notice {
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.8);
+}
+
+.time-row span:first-child {
+    width: 100px;
+    /* '주말 및 공휴일' 텍스트가 안 깨지게 너비 확보 */
+}
+
+/* ========================================
+   점심시간 및 야간진료
+======================================== */
+.footer-lunch {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 진료시간 줄 간격과 동일하게 세팅 */
+}
+
+.lunch-row {
+    display: flex;
+    gap: 20px;
+    /* 시간과 라벨 사이 간격 */
+    align-items: flex-start;
+}
+
+/* '평일 야간(수)' 글자가 깨지지 않도록 너비를 진료시간 영역(100px)과 동일하게 맞춤 */
+.footer-lunch .lunch-row .label {
+    width: 100px;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.8);
+}
+
+.footer-lunch p {
+    margin: 0;
+}
+
+/* ========================================
+   대표번호
+======================================== */
+.footer-contact {
+    flex-direction: column;
+    /* '대표 번호' 라벨 밑으로 전화번호 배치 */
+}
+
+.footer-contact .label {
+    margin-bottom: 10px;
+}
+
+.tel-link {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    line-height: 1;
+}
+
+
+
+
+
+/* ==========
+플로팅
+================ */
+/* 플로팅 메뉴 위치 */
+.floating-menu {
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 캐릭터 영역 */
+.quick-menu-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+/* 숨겨진 퀵 아이콘 */
+.quick-icons {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    width: 80px;
+    height: 270px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border: 3px solid #AFCFDD;
+    border-radius: 50px;
+    background-color: rgba(249, 250, 252, 0.3);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 캐릭터에서 아이콘으로 이동할 때 메뉴가 닫히지 않도록 연결 */
+.quick-icons::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -3px;
+    width: 80px;
+    height: 28px;
+}
+
+.quick-icons a {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.quick-icons img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.quick-icons a:hover img {
+    transform: scale(1.15);
+}
+
+/* 캐릭터 버튼 */
+.quick-char {
+    position: relative;
+    display: block;
+
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background-color: rgba(245, 247, 250, 0.6);
+    box-shadow: 0 0 25px rgba(74, 155, 184, 0.4);
+    cursor: pointer;
+
+    transition: box-shadow 0.3s ease;
+}
+
+.quick-char img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.quick-char .char-default {
+    opacity: 1;
+}
+
+.quick-char .char-hover {
+    opacity: 0;
+}
+
+/* JavaScript로 열림 상태 제어 */
+.quick-menu-wrap.is-open .quick-icons {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.quick-menu-wrap.is-open .quick-char {
+    box-shadow: 0 0 25px rgba(246, 202, 70, 0.4);
+}
+
+.quick-menu-wrap.is-open .char-default {
+    opacity: 0;
+}
+
+.quick-menu-wrap.is-open .char-hover {
+    opacity: 1;
+}
+
+/* TOP 버튼 */
+.btn-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    padding: 0;
+
+    border: 3px solid #AFCFDD;
+    border-radius: 50%;
+    background-color: rgba(249, 250, 252, 0.3);
+    background-image: url(../images/button/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-top:hover {
+    background-color: #F5F7FA;
+    transform: translateY(-2px);
+}
+
+.quick-char:focus-visible,
+.btn-top:focus-visible,
+.quick-icons a:focus-visible {
+    outline: 3px solid #4A9BB8;
+    outline-offset: 4px;
+}
+
+
+
+
+
+
+/* 모바일 반응형 처리 */
+@media (max-width: 992px) {
+    .doctor-profile {
+        flex-direction: column !important;
+        /* 모바일에서는 순서대로 세로 정렬 */
+        text-align: center;
+        gap: 24px;
+    }
+
+    .doctor-name {
+        justify-content: center;
+    }
+
+    .tag-list {
+        justify-content: center;
+    }
+
+    .doctor-career {
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+    }
+}

@@ -1,0 +1,1798 @@
+@charset "utf-8";
+
+/* webfont */
+/* 웹폰트없으면 지우세요!!! */
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+}
+
+body {
+    font-family: 'Pretendard';
+    font-family: 'SUITE', sans-serif;
+    /* font-size: ; */
+    line-height: 1.5;
+    color: #333;
+    background-color: #F5F7FA;
+}
+
+#wrap {
+    min-width: 1360px;
+}
+
+
+
+
+/* ❤️❤️❤️ header */
+#header {
+    background-color: #F5F7FA;
+
+    border-bottom: 1px solid #AFCFDD;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.inner_header {
+    width: 1300px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.gnb {
+    display: flex;
+    gap: 20px;
+}
+
+.gnb>li {
+    position: relative;
+}
+
+/* 버튼과 서브메뉴 사이 연결 / 테두리가 있으니 가상선택자로 */
+.gnb>li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 30px;
+    /* 빈 공간만큼 */
+    cursor: pointer;
+}
+
+.gnb>li>a {
+    display: block;
+    padding: 10px 28px;
+    border: 2px solid #AFCFDD;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.gnb>li>a:hover {
+    background-color: #4A9BB8;
+    border: 2px solid #4A9BB8;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(74, 155, 184, 0.3)
+}
+
+.submenu {
+    /* display: flex;
+    flex-direction: column;
+ */
+
+    position: absolute;
+    top: 81px;
+    left: 0;
+    margin-top: 0;
+
+    background-color: #F5F7FA;
+    padding: 10px 22px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px rgba(74, 155, 184, 0.3);
+    z-index: 100;
+
+    display: none;
+
+    /* 숨김 처리 */
+    /* opacity: 0;
+    visibility: hidden;
+
+    transition: opactiy 0.3s ease-in-out, visibility 0.3s ease-in-out; */
+    /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
+}
+
+.gnb>li:hover .submenu {
+    /* display: flex;
+    flex-direction: column; */
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.inner_submenu li a {
+    font-weight: 700;
+    display: block;
+    padding: 8px 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.inner_submenu li a:hover {
+    color: #4a9bb8;
+
+}
+
+
+
+
+
+
+/* 배너 */
+.hero-section {
+    width: 100%;
+    height: 500px;
+    /* 요청하신 높이 */
+    margin: 100px auto;
+    /* 가운데 정렬 */
+    background-image: url(../images/sub/2/banner.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    /* 내부 콘텐츠 배치를 위한 플렉스박스 */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    /* 왼쪽 여백을 주어 사진 속 위치와 비슷하게 맞춥니다. */
+    padding-left: 15%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-title {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 100px;
+    text-shadow: 0 2px 4px rgba(51, 51, 51, 0.2);
+    /* 글씨가 잘 보이도록 약간의 그림자 추가 */
+}
+
+.hero-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* 가로로 나열 */
+    gap: 20px;
+    /* 버튼 사이 간격 */
+}
+
+.hero-menu>li>a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    /* 기본 투명 배경 */
+    border: 2px solid #f6c945;
+    /* 노란색 테두리 */
+    color: #ffffff;
+    /* 흰색 글씨 */
+    border-radius: 30px;
+    /* 둥근 알약 모양 */
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    /* 밑줄 제거 */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* 부드러운 전환 효과 */
+}
+
+/* 보여주신 .gnb>li>a:hover 스타일 작성 방식과 동일합니다. */
+.hero-menu>li>a:hover,
+.hero-menu>li>a.active {
+    background-color: #f6c945;
+    /* 노란색 배경 */
+    border: 2px solid #f6c945;
+    color: #333333;
+    /* 검정/진회색 글씨 */
+}
+
+
+#admission-procedure {
+    scroll-margin-top: 200px;
+}
+
+#discharge-procedure {
+    scroll-margin-top: 100px;
+}
+
+/* 입원 절차 */
+.admission-procedure {
+    /* padding: 100px 0; */
+    /* 뻗어나간 선 때문에 가로 스크롤이 생기지 않도록 넘치는 부분을 잘라냅니다 */
+    overflow-x: hidden;
+    /* margin-bottom: 100px; */
+}
+
+.inner-wrap {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* 안내 박스 스타일 */
+.info-box {
+    padding-bottom: 120px;
+    /* margin-bottom: 45px; */
+    /* margin-bottom: 100px; */
+
+}
+
+/* ⭐️ Flex를 사용하여 이미지와 텍스트를 수직 중앙 정렬합니다 */
+.info-title {
+    display: inline-flex;
+    /* 텍스트 길이만큼만 영역을 차지하면서 Flex 적용 */
+    align-items: center;
+    /* 수직 중앙 정렬 */
+    font-size: 24px;
+    color: #4a9bb8;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* 기존에 있던 동그라미 배경, 글자색 등 불필요한 속성 제거 */
+.exclamation {
+    display: inline-block;
+    margin-right: 8px;
+    /* 텍스트와의 간격 띄우기 */
+}
+
+/* 느낌표 이미지 크기 제어 */
+.exclamation img {
+    width: 40px;
+    /* 가지고 계신 이미지 크기에 맞게 이 수치를 조절하세요 */
+    height: 40px;
+    display: block;
+}
+
+/* 아래 리스트 스타일은 기존과 동일하게 유지하시면 됩니다 */
+.info-list {
+    list-style: none;
+    padding-left: 40px;
+    margin: 0;
+}
+
+.info-list li {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 5px;
+}
+
+.info-list li::before {
+    content: "•";
+    position: absolute;
+    left: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.info-list .sub-note {
+    font-size: 18px;
+    color: #333;
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+
+/* 2. 타임라인 래퍼에 양옆으로 뻗어나가는 선 달아주기 */
+.timeline-wrapper::before,
+.timeline-wrapper::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    /* SVG 선 두께(4px)와 똑같이 맞춤 */
+    background-color: #f6c945;
+    /* 노란선 색상 */
+}
+
+/* 화면 바깥으로 뻗어나가는 선 (::before, ::after) 위치 수정 */
+.timeline-wrapper::before {
+    /* 1번째 줄(120px) - 선 두께 절반(2px) */
+    top: 118px;
+    right: 100%;
+    width: 100vw;
+}
+
+.timeline-wrapper::after {
+    /* 3번째 줄(620px) - 선 두께 절반(2px) */
+    top: 618px;
+    left: 100%;
+    width: 100vw;
+}
+
+/* 타임라인 래퍼 (높이를 800px로 증가) */
+.timeline-wrapper {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    /* 기존 600px에서 800px로 변경 */
+}
+
+.path-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 각 타임라인 점 (아이콘, 점, 텍스트 그룹) */
+.timeline-point {
+    position: absolute;
+    z-index: 2;
+}
+
+/* 기준이 되는 노란색 점 (좌표의 중심점) */
+.timeline-point .dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f6c945;
+    border-radius: 50%;
+    left: -8px;
+    top: -10px;
+}
+
+/* 아이콘 위치 (점 위쪽으로 배치) */
+.timeline-point .icon {
+    position: absolute;
+    bottom: 25px;
+    /* ⭐️ 무조건 완벽하게 가운데 정렬되는 핵심 코드 ⭐️ */
+    left: 0;
+    transform: translateX(-50%);
+
+    width: 100px;
+    text-align: center;
+
+}
+
+.timeline-point .char-icon img {
+    width: 170px;
+    position: absolute;
+    bottom: 0px;
+    left: -300px;
+}
+
+.timeline-point .icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* 텍스트 위치 (점 아래쪽으로 배치) */
+.timeline-point .text-wrap {
+    position: absolute;
+    top: 30px;
+    left: -125px;
+    /* 텍스트 박스(250px)의 절반 */
+    width: 250px;
+    text-align: center;
+}
+
+.text-wrap h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-wrap p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #333;
+    font-family: 'Pretendard';
+}
+
+/* 캐릭터 아이콘 보정 */
+
+
+
+/* --- JS 애니메이션 용 CSS --- */
+.fade-target {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-target.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 순차적으로 나타나도록 딜레이 적용 */
+.delay-0 {
+    transition-delay: 0s;
+}
+
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
+}
+
+.delay-4 {
+    transition-delay: 0.8s;
+}
+
+.delay-5 {
+    transition-delay: 1.0s;
+}
+
+
+
+/* 입원 준비물 */
+
+/* 섹션 배경 및 공통 설정 */
+.preparation-section {
+    /* margin-top: 100px; */
+    padding: 100px 0;
+
+    /* ⭐️ 배경 이미지 설정 (전체 꽉 차게) */
+    background-image: url(../images/sub/2/adm_bg.png);
+    /* 실제 배경 사진 경로로 변경하세요 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.preparation-section .inner-wrap {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+/* 상단 타이틀 */
+.prep-header {
+    margin-bottom: 100px;
+}
+
+.prep-header .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.prep-header p {
+    font-weight: 500;
+    font-family: 'Pretendard';
+    font-size: 18px;
+    color: #333;
+}
+
+/* 박스들을 나란히 배치하는 Flex 컨테이너 */
+.prep-container {
+    justify-content: flex;
+    display: flex;
+    gap: 70px;
+}
+
+/* 개별 박스 공통 스타일 */
+.prep-box {
+    flex: 1;
+    /* 두 박스가 정확히 5:5 비율을 차지하도록 함 */
+    position: relative;
+    /* 라벨을 띄우기 위한 기준점 */
+
+    /* 배경 사진이 살짝 비치면서 글자가 잘 보이게 반투명 흰색 깔기 */
+    border-radius: 30px;
+    padding: 45px 0px 20px 66px;
+    /* 위쪽 여백을 넉넉히 주어 라벨과 안 겹치게 함 */
+}
+
+/* 테두리 색상 지정 */
+.box-yellow {
+    border: 5px solid #F6CA46;
+    background-color: rgba(255, 255, 250, 0.1);
+}
+
+.box-blue {
+    border: 5px solid #4A9BB8;
+    background-color: rgba(255, 255, 250, 0.3);
+}
+
+/* ⭐️ 박스 선 위에 얹히는 라벨(제목) */
+.box-label {
+    font-family: 'Pretendard';
+    position: absolute;
+    top: -3px;
+    left: 57px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 21px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.label-yellow {
+    background-color: #F6CA46;
+}
+
+.label-blue {
+    background-color: #4A9BB8;
+}
+
+/* 뱃지 이미지 (체크, 별) */
+.box-label .badge-img {
+    position: absolute;
+    left: -45px;
+    top: 43%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: auto;
+}
+
+/* -------------------------------------
+   왼쪽: 체크리스트 (클릭 기능 추가)
+------------------------------------- */
+.check-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 27px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 글자나 체크박스를 누르기 쉽게 label에 디자인 적용 */
+.check-list label {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 18px;
+    color: #333;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+    /* 마우스를 올리면 손가락(클릭) 모양으로 바뀜 */
+}
+
+.two-lines em {
+    font-style: normal;
+    font-size: 14px;
+}
+
+.two-lines span {
+    line-height: 1;
+
+}
+
+/* ⭐️️ 1. 진짜 체크박스(못생긴 기본 UI) 숨기기 */
+.hidden-check {
+    display: none;
+}
+
+/* ⭐️ 2. 내가 만든 가짜 체크박스 기본 모양 (빈 네모) */
+.custom-box {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #F6CA46;
+    /* 노란색 테두리 */
+    border-radius: 5px;
+
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    /* 체크될 때 부드럽게 색칠됨 */
+}
+
+/* ⭐️ 3. 체크되었을 때 네모 박스의 변화 (노란색으로 꽉 채우기) */
+.hidden-check:checked+.custom-box {
+    background-color: #F6CA46;
+}
+
+/* ⭐️ 4. 체크되었을 때 하얀색 V자(체크 모양) 그리기 */
+.hidden-check:checked+.custom-box::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    /* 테두리를 밑과 오른쪽에만 줌 */
+    transform: rotate(45deg);
+    /* 45도 돌려서 V자 모양 완성! */
+}
+
+
+
+
+
+
+/* -------------------------------------
+   오른쪽: 주의사항 리스트
+------------------------------------- */
+.caution-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.caution-list li {
+    font-family: 'Pretendard';
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #333;
+    /* line-height: 2; */
+}
+
+/* 리스트 앞에 붙는 가짜 점(bullet) 생성 */
+.caution-list li::before {
+    content: "•";
+    position: absolute;
+    left: -10px;
+    color: #333;
+    font-size: 18px;
+}
+
+
+
+
+
+/* 입원 생활 안내 */
+
+/* 공통 섹션 배경 */
+.hospital-life-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.hospital-life-section .inner-wrap {
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* 좌우 내용물 양끝 정렬 */
+    position: relative;
+    z-index: 2;
+}
+
+/* ⭐️ 배경 장식 (별) 절대 위치 지정 */
+.deco-star {
+    position: absolute;
+    z-index: 1;
+    animation: star-float 3s ease-in-out infinite;
+}
+
+.star-blue {
+    top: 150px;
+    left: 55%;
+    width: 70px;
+}
+
+.star-yellow {
+    top: 250px;
+    right: 10%;
+    width: 70px;
+    animation-delay: -1.5s;
+}
+
+@keyframes star-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .deco-star {
+        animation: none;
+    }
+}
+
+/* -----------------------------------
+   타이틀 영역
+----------------------------------- */
+.section-title-wrap {
+    margin-bottom: 100px;
+}
+
+.section-title-wrap h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.section-title-wrap p {
+    font-size: 18px;
+    font-family: 'Pretendard';
+    color: #333;
+    font-weight: 500;
+    /* line-height: 1.6; */
+}
+
+/* -----------------------------------
+   아코디언 리스트 (좌측 영역)
+----------------------------------- */
+.accordion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    /* 각 아코디언 사이 여백 */
+}
+
+/* 요청하신 노란색 배경 바 (Header) */
+.acc-header {
+    width: 768px;
+    height: 50px;
+    background-color: #F6CA46;
+    /* 노란/오렌지색 계열 */
+    border-radius: 50px;
+    /* 요청하신 반경 50%의 둥근 알약 형태 */
+    padding-left: 50px;
+    padding-right: 30px;
+    /* 화살표 우측 여백 */
+
+    /* Flex로 글자와 화살표 양끝 배치 및 수직 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: pointer;
+    /* 마우스 올렸을 때 클릭 표시 */
+}
+
+.acc-header .acc-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 화살표 이미지 애니메이션 설정 */
+.acc-header .acc-arrow {
+    width: 25px;
+    height: 12px;
+    transition: transform 0.3s ease;
+    /* 회전 시 부드럽게 */
+}
+
+/* ⭐️ 꿀팁: 완벽한 동그라미 점선 만들기 */
+.dotted-line {
+    width: 100%;
+    /* 1. 박스 높이를 점의 지름(두께)과 똑같이 4px로 맞춤 (잘림 방지) */
+    height: 6px;
+
+    /* 2. 완벽한 원형 그리기: 중심점(2px, 2px)에서 시작해 반지름 2px짜리 원을 그림 */
+    background-image: radial-gradient(circle at 2px 2px, #f2a83b 2px, transparent 2.5px);
+
+    /* 3. 간격 설정: 가로 18px (점 지름 4px + 원하는 간격 14px)마다 반복 */
+    background-size: 23px 10px;
+    background-repeat: repeat-x;
+
+    margin: 10px 0 20px 0;
+    /* 아래 글자와의 여백 */
+}
+
+
+/* 요청하신 내용 박스 (Content) */
+.acc-content {
+    width: 768px;
+    border: 3px solid #F6CA46;
+    border-radius: 20px;
+    /* 모서리 둥글기 20px */
+
+    /* 요청하신 여백: 위 50, 좌 50, 하 50, 우 30(정해지지 않음이라 임의로 넉넉히 줌) */
+    padding: 50px 30px 50px 50px;
+    box-sizing: border-box;
+
+    /* 초기에는 닫혀 있도록 설정 */
+    display: none;
+    margin-top: 10px;
+    /* 노란 바 밑으로 살짝 밀어넣어 자연스럽게 연결 */
+    padding-top: 60px;
+    /* 밀어넣은 만큼 위 여백을 더 줌 */
+}
+
+/* 박스 내부 텍스트 스타일 설정 */
+.acc-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.acc-info-list li {
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    /* line-height: 1.6;/ */
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.meal-time {
+    padding-bottom: 5px;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* 내용 리스트 불릿(점) 스타일 */
+.acc-info-list li::before {
+    content: "•";
+    position: absolute;
+    left: -5px;
+    top: 0;
+}
+
+/* -----------------------------------
+   아코디언 동작 클래스 (JS 연동)
+----------------------------------- */
+/* 박스가 열렸을 때 (JS로 active 클래스 부여) */
+.accordion-item.active .acc-content {
+    display: block;
+    /* CSS 애니메이션 추가를 원하시면 max-height 방식 사용도 가능합니다 */
+}
+
+/* 화살표가 180도 뒤집히게 (요청하신 기능) */
+.accordion-item.active .acc-arrow {
+    transform: rotate(180deg);
+}
+
+/* -----------------------------------
+   우측 캐릭터 영역
+----------------------------------- */
+.content-right {
+    display: flex;
+    display: flex;
+    align-items: flex-start;
+    /* 상단 기준으로 고정 */
+    align-self: flex-start;
+    /* 왼쪽 높이에 따라 늘어나지 않도록 */
+}
+
+.char-img {
+    display: block;
+    margin-top: 200px;
+    /* 원하는 이미지 위치에 맞게 조절 */
+}
+
+
+
+
+
+/* =========================================
+   퇴원 절차 (Discharge Procedure)
+========================================= */
+
+.discharge-procedure {
+    position: relative;
+    padding: 100px 0 75px;
+    overflow-x: hidden;
+    /* font-family: 'Pretendard'; */
+
+    /* 배경 사진 적용 (경로를 맞춰주세요) */
+    background-color: #fffff4;
+
+}
+
+/* 1300px 중앙 래퍼 */
+.discharge-procedure .inner-wrap {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 타이틀 & 안내박스 여백 정리 */
+.discharge-procedure .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+
+/* 타임라인 래퍼 */
+.timeline-wrapper-dis {
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+
+/* 화면 바깥으로 뻗어 나가는 선 */
+.timeline-wrapper-dis::before,
+.timeline-wrapper-dis::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: #4A9BB8;
+}
+
+.timeline-wrapper-dis::before {
+    top: 118px;
+    right: 100%;
+    width: 100vw;
+}
+
+.timeline-wrapper-dis::after {
+    top: 618px;
+    left: 100%;
+    width: 100vw;
+}
+
+/* 배경 SVG 선 */
+.path-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================
+   점, 아이콘, 텍스트 공통 정렬 스타일
+========================================= */
+.timeline-point-dis {
+    position: absolute;
+    z-index: 2;
+}
+
+/* 1. 기준점 (파란색 도트) */
+.timeline-point-dis .dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #4A9BB8;
+    border-radius: 50%;
+    /* ⭐️ 너비(20px)의 정확히 절반인 10px을 뺌 = 완벽한 중앙! */
+    left: -10px;
+    top: -10px;
+}
+
+/* 2. 아이콘 이미지 */
+.timeline-point-dis .icon {
+    position: absolute;
+    bottom: 25px;
+    /* 점 위로 띄움 */
+    width: 100px;
+    text-align: center;
+
+    /* ⭐️ 점을 기준으로 무조건 수직 가운데 정렬되는 마법의 공식 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-point-dis .icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 3. 텍스트 박스 */
+.timeline-point-dis .text-wrap {
+    position: absolute;
+    top: 35px;
+    /* 점 아래로 띄움 */
+    width: 361px;
+    /* 텍스트가 잘리지 않게 넉넉히 */
+    text-align: center;
+
+    /* ⭐️ 아이콘과 똑같이 완벽하게 수직 가운데 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* 진료비 수납 등 작은 안내 멘트용 */
+.text-wrap .small-note {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+/* =========================================
+   캐릭터 특수 스타일
+========================================= */
+.char-point .icon {
+    font-family: 'Pretendard';
+    width: 170px;
+    bottom: 0;
+}
+
+
+/* =========================================
+   스크롤 애니메이션용 클래스
+========================================= */
+.fade-target {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-target.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.3s;
+}
+
+.delay-3 {
+    transition-delay: 0.5s;
+}
+
+.delay-4 {
+    transition-delay: 0.7s;
+}
+
+.delay-5 {
+    transition-delay: 0.9s;
+}
+
+/* 기본 상태: 부드러운 전환 효과 준비 */
+.timeline-point .icon img,
+.timeline-point-dis .icon img {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 마우스를 올렸을 때: 1.15배 확대 */
+.timeline-point:hover .icon img,
+.timeline-point-dis:hover .icon img {
+    transform: scale(1.1);
+}
+
+/* 1. 위아래로 둥둥 뜨는 애니메이션 마법진 */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    /* 위로 15px 붕~ 뜸 */
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 2. 끝에 있는 캐릭터 + 시작 캐릭터 모두 적용 */
+.timeline-point-dis.char-point:hover .icon img,
+.timeline-point.char-point:hover .char-icon img {
+    /* ⬅️ 이 줄이 추가되었습니다! */
+    animation: floating 1.5s ease-in-out infinite;
+}
+
+
+
+/* 퇴원 후 주의사항 */
+
+
+
+.pd-inner-wrap {
+    width: 1300px;
+    margin: 0 auto 100px;
+}
+
+.pd-main-title {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 100px 0 100px 0;
+}
+
+.pd-flex-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.pd-col-left {
+    width: 513px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pd-col-right {
+    width: 570px;
+    flex-shrink: 0;
+    /* 너비 고정 방어 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 58px;
+}
+
+
+.pd-box {
+    position: relative;
+    border-radius: 30px;
+    padding: 60px 45px 25px 45px;
+    box-sizing: border-box;
+}
+
+
+.border-yellow {
+    border: 5px solid #F6CA46;
+}
+
+.border-teal {
+    border: 5px solid #4A9BB8;
+}
+
+.pd-label {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 27px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.bg-yellow {
+    background-color: #F6CA46;
+}
+
+.bg-teal {
+    background-color: #4A9BB8;
+}
+
+.pd-label.label-left {
+    left: 40px;
+}
+
+.badge-icon {
+    position: absolute;
+    left: -38px;
+    top: -4px;
+    width: 42px;
+    height: auto;
+}
+
+.pd-label.label-center {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pd-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pd-list li {
+    font-family: 'Pretendard';
+    position: relative;
+    font-weight: 500;
+    padding-left: 15px;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.pd-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333;
+}
+
+.pd-dotted-line {
+    width: 100%;
+    height: 4px;
+    background-image: radial-gradient(circle at 2px 2px, #F6CA46 2px, transparent 2.5px);
+    background-size: 14px 4px;
+    /* 점선 간격 */
+    background-repeat: repeat-x;
+    margin: 25px 0;
+}
+
+.pd-warning-text {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    color: #4A9BB8;
+    text-align: center;
+    font-size: 20px;
+}
+
+.pd-warning-text .tel-number {
+    margin-top: 18px;
+    font-weight: 600;
+    color: #333;
+
+}
+
+.pd-warning-text .tel-number strong {
+    font-size: 20px;
+    color: #333;
+
+}
+
+/* 체크 */
+.pd-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pd-checklist li {
+    margin-bottom: 27px;
+}
+
+.pd-checklist label {
+    font-family: 'Pretendard';
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pd-hidden-check {
+    display: none;
+}
+
+.pd-custom-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 3px solid #4A9BB8;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+/* 체크되었을 때 */
+.pd-hidden-check:checked+.pd-custom-box {
+    background-color: #4A9BB8;
+}
+
+/* 하얀색 V 표시 */
+.pd-hidden-check:checked+.pd-custom-box::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.pd-has-img {
+    padding-bottom: 50px;
+}
+
+.bg-pill {
+    background-image: url('../images/sub/2/notic_icon.svg');
+}
+
+.bg-plate {
+    background-image: url('../images/sub/2/notic_icon1.svg');
+}
+
+.bg-steth {
+    background-image: url('../images/sub/2/adm_icon1.svg');
+}
+
+.deco-img {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 110px;
+    height: auto;
+}
+
+.bg-pill,
+.bg-plate,
+.bg-steth {
+    background-repeat: no-repeat;
+    background-size: 160px;
+    background-position: right -25px bottom -20px;
+}
+
+
+
+
+
+/* ========================================
+ 💻💻💻💻  FOOTER TEXT
+======================================== */
+
+.footer {
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 0.5);
+    width: 100%;
+
+
+    background-color: #AFCFDD;
+    z-index: 99;
+}
+
+.footer-inner {
+    position: relative;
+    /* 캐릭터 배치의 기준점 */
+    width: 1300px;
+    margin: 0 auto;
+    /* 기존 여백 설정 유지 */
+    padding: 90px 0 60px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* 로고 영역과 텍스트 영역을 위아래로 분리 */
+}
+
+
+
+/* ========================================
+   상단: 로고 영역
+======================================== */
+.footer-top {
+    margin-bottom: 25px;
+    /* 로고와 아래 텍스트 사이의 간격 */
+}
+
+.footer-logo {
+    margin: 0;
+}
+
+/* ========================================
+   하단: 텍스트 영역 공통
+======================================== */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* 핵심포인트: 모든 블록의 윗선을 똑같이 맞춤 */
+    width: 100%;
+}
+
+.footer-block {
+    display: flex;
+    align-items: flex-start;
+}
+
+.label {
+    width: 70px;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.5);
+    flex-shrink: 0;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 텍스트 줄 간격 */
+}
+
+/* ========================================
+   병원 정보 (주소, 이용약관)
+======================================== */
+.footer-info {
+    flex-direction: column;
+    width: 400px;
+    gap: 12px;
+}
+
+.infomation-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.infomation-item .value {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* font-weight: 500; */
+}
+
+.infomation-item b {
+    margin: 0 4px;
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.copyright {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+/* ========================================
+   진료시간
+======================================== */
+.footer-time {
+    width: 300px;
+}
+
+.time-row {
+    display: flex;
+    gap: 20px;
+}
+
+.time-row span,
+.footer-lunch .lunch-row .label,
+.footer-lunch .lunch-row .value,
+.notice {
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.8);
+}
+
+.time-row span:first-child {
+    width: 100px;
+    /* '주말 및 공휴일' 텍스트가 안 깨지게 너비 확보 */
+}
+
+/* ========================================
+   점심시간 및 야간진료
+======================================== */
+.footer-lunch {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 진료시간 줄 간격과 동일하게 세팅 */
+}
+
+.lunch-row {
+    display: flex;
+    gap: 20px;
+    /* 시간과 라벨 사이 간격 */
+    align-items: flex-start;
+}
+
+/* '평일 야간(수)' 글자가 깨지지 않도록 너비를 진료시간 영역(100px)과 동일하게 맞춤 */
+.footer-lunch .lunch-row .label {
+    width: 100px;
+    margin: 0;
+    color: rgba(51, 51, 51, 0.8);
+}
+
+.footer-lunch p {
+    margin: 0;
+}
+
+/* ========================================
+   대표번호
+======================================== */
+.footer-contact {
+    flex-direction: column;
+    /* '대표 번호' 라벨 밑으로 전화번호 배치 */
+}
+
+.footer-contact .label {
+    margin-bottom: 10px;
+}
+
+.tel-link {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    line-height: 1;
+}
+
+
+
+
+
+
+/* ==========
+플로팅
+================ */
+/* 플로팅 메뉴 위치 */
+.floating-menu {
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 캐릭터 영역 */
+.quick-menu-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+/* 숨겨진 퀵 아이콘 */
+.quick-icons {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    width: 80px;
+    height: 270px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border: 3px solid #AFCFDD;
+    border-radius: 50px;
+    background-color: rgba(249, 250, 252, 0.3);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 캐릭터에서 아이콘으로 이동할 때 메뉴가 닫히지 않도록 연결 */
+.quick-icons::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -3px;
+    width: 80px;
+    height: 28px;
+}
+
+.quick-icons a {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.quick-icons img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.quick-icons a:hover img {
+    transform: scale(1.15);
+}
+
+/* 캐릭터 버튼 */
+.quick-char {
+    position: relative;
+    display: block;
+
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background-color: rgba(245, 247, 250, 0.6);
+    box-shadow: 0 0 25px rgba(74, 155, 184, 0.4);
+    cursor: pointer;
+
+    transition: box-shadow 0.3s ease;
+}
+
+.quick-char img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.quick-char .char-default {
+    opacity: 1;
+}
+
+.quick-char .char-hover {
+    opacity: 0;
+}
+
+/* JavaScript로 열림 상태 제어 */
+.quick-menu-wrap.is-open .quick-icons {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.quick-menu-wrap.is-open .quick-char {
+    box-shadow: 0 0 25px rgba(246, 202, 70, 0.4);
+}
+
+.quick-menu-wrap.is-open .char-default {
+    opacity: 0;
+}
+
+.quick-menu-wrap.is-open .char-hover {
+    opacity: 1;
+}
+
+/* TOP 버튼 */
+.btn-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    padding: 0;
+
+    border: 3px solid #AFCFDD;
+    border-radius: 50%;
+    background-color: rgba(249, 250, 252, 0.3);
+    background-image: url(../images/button/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-top:hover {
+    background-color: #F5F7FA;
+    transform: translateY(-2px);
+}
+
+.quick-char:focus-visible,
+.btn-top:focus-visible,
+.quick-icons a:focus-visible {
+    outline: 3px solid #4A9BB8;
+    outline-offset: 4px;
+}
