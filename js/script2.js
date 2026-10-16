@@ -247,3 +247,40 @@ if (document.readyState === 'loading') {
 } else {
     initFloatingMenu();
 }
+
+// 진료일정표
+document.addEventListener("DOMContentLoaded", () => {
+    const btnSchedule = document.getElementById("btn-schedule");
+    const modal = document.getElementById("scheduleModal");
+    const btnCloseModal = document.getElementById("btnCloseModal");
+    const modalOverlay = document.getElementById("modalOverlay");
+
+    // 모달 열기
+    const openModal = (e) => {
+        if (e) e.preventDefault();
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden"; // 배경 스크롤 방지
+    };
+
+    // 모달 닫기
+    const closeModal = () => {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = ""; // 배경 스크롤 복구
+    };
+
+    // 캘린더 아이콘 클릭 시
+    btnSchedule.addEventListener("click", openModal);
+
+    // X 버튼 및 반투명 배경 클릭 시
+    btnCloseModal.addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", closeModal);
+
+    // ESC 키 입력 시 닫기
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+            closeModal();
+        }
+    });
+});
